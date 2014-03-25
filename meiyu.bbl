@@ -1,0 +1,76 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{\textit{Chen and Bordoni}(2014)}]{Chen2014}
+Chen, J., and S.~Bordoni (2014), {Orographic Effects of the Tibetan Plateau on
+  the East Asian Summer Monsoon: An energetic perspective}, \textit{J.
+  Climate}, p. 140113153908002, \doi{10.1175/JCLI-D-13-00479.1}.
+
+\bibitem[{\textit{Chou et~al.}(2009)\textit{Chou, Neelin, Chen, and
+  Tu}}]{Chou2009}
+Chou, C., J.~D. Neelin, C.-A. Chen, and J.-Y. Tu (2009), {Evaluating the
+  “rich-get-richer” mechanism in tropical precipitation change under global
+  warming}, \textit{J. Climate}, \textit{22}(8), 1982--2005,
+  \doi{10.1175/2008JCLI2471.1}.
+
+\bibitem[{\textit{Ding and Chan}(2005)}]{Ding2005}
+Ding, Y., and J.~C.~L. Chan (2005), {The East Asian summer monsoon: an
+  overview}, \textit{Meteorol. Atmos. Phys.}, \textit{89}(1-4), 117--142,
+  \doi{10.1007/s00703-005-0125-z}.
+
+\bibitem[{\textit{Held and Soden}(2006)}]{Held2006}
+Held, I., and B.~Soden (2006), {Robust responses of the hydrological cycle to
+  global warming}, \textit{J. Climate}, \textit{19}(21), 5686--5699.
+
+\bibitem[{\textit{Liang and Wang}(1998)}]{Liang1998}
+Liang, X., and W.~Wang (1998), {Associations between China monsoon rainfall and
+  tropospheric jets}, \textit{Q. J. R. Meteorol. Soc.}, \textit{124}(May),
+  2597--2623.
+
+\bibitem[{\textit{Lintner and Neelin}(2007)}]{Lintner2007}
+Lintner, B., and J.~D. Neelin (2007), {A prototype for convective margin
+  shifts}, \textit{Geophys. Res. Lett.}, \textit{34}(5), L05,812,
+  \doi{10.1029/2006GL027305}.
+
+\bibitem[{\textit{Nagashima et~al.}(2011)\textit{Nagashima, Tada, Tani, Sun,
+  Isozaki, Toyoda, and Hasegawa}}]{Nagashima2011}
+Nagashima, K., R.~Tada, A.~Tani, Y.~Sun, Y.~Isozaki, S.~Toyoda, and H.~Hasegawa
+  (2011), {Millennial-scale oscillations of the westerly jet path during the
+  last glacial period}, \textit{J. Asian Earth Sci.}, \textit{40}(6),
+  1214--1220, \doi{10.1016/j.jseaes.2010.08.010}.
+
+\bibitem[{\textit{Nagashima et~al.}(2013)\textit{Nagashima, Tada, and
+  Toyoda}}]{Nagashima2013}
+Nagashima, K., R.~Tada, and S.~Toyoda (2013), {Westerly jet-East Asian summer
+  monsoon connection during the Holocene}, \textit{Geochemistry, Geophys.
+  Geosystems}, \textit{14}(12), 5041--5053, \doi{10.1002/2013GC004931}.
+
+\bibitem[{\textit{Roe}(2009)}]{Roe2009}
+Roe, G. (2009), {On the interpretation of Chinese loess as a paleoclimate
+  indicator}, \textit{Quat. Res.}, \textit{71}(2), 150--161,
+  \doi{10.1016/j.yqres.2008.09.004}.
+
+\bibitem[{\textit{Sampe and Xie}(2010)}]{Sampe2010}
+Sampe, T., and S.-P. Xie (2010), {Large-Scale Dynamics of the Meiyu-Baiu
+  Rainband: Environmental Forcing by the Westerly Jet}, \textit{J. Climate},
+  \textit{23}(1), 113--134, \doi{10.1175/2009JCLI3128.1}.
+
+\bibitem[{\textit{Schiemann et~al.}(2009)\textit{Schiemann, L\"{u}thi, and
+  Sch\"{a}r}}]{Schiemann2009}
+Schiemann, R., D.~L\"{u}thi, and C.~Sch\"{a}r (2009), {Seasonality and
+  Interannual Variability of the Westerly Jet in the Tibetan Plateau Region},
+  \textit{J. Climate}, \textit{22}(11), 2940--2957,
+  \doi{10.1175/2008JCLI2625.1}.
+
+\bibitem[{\textit{Yatagai et~al.}(2012)\textit{Yatagai, Kamiguchi, Arakawa,
+  Hamada, Yasutomi, and Kitoh}}]{Yatagai2012}
+Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
+  (2012), {APHRODITE: Constructing a Long-Term Daily Gridded Precipitation
+  Dataset for Asia Based on a Dense Network of Rain Gauges}, \textit{Bull. Am.
+  Meteorol. Soc.}, \textit{93}(9), 1401--1415, \doi{10.1175/BAMS-D-11-00122.1}.
+
+\end{thebibliography}

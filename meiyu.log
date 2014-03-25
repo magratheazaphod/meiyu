@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  24 MAR 2014 19:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  25 MAR 2014 14:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -237,7 +237,8 @@ Package natbib Warning: Citation `Lintner2007' on page 3 undefined on input lin
 e 174.
 
 
-Package natbib Warning: Citation `2009' on page 3 undefined on input line 174.
+Package natbib Warning: Citation `Chou2009' on page 3 undefined on input line 1
+74.
 
 [3]
 
@@ -277,30 +278,42 @@ e 180.
 Package natbib Warning: Citation `Schiemann2009' on page 5 undefined on input l
 ine 182.
 
-[5]
+[5] (./meiyu.bbl
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+ [6])
 
 Package natbib Warning: There were undefined citations.
 
-[6] (./meiyu.aux) ) 
+[7] (./meiyu.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+) ) 
 Here is how much of TeX's memory you used:
- 1320 strings out of 493315
- 15828 string characters out of 6137904
- 82346 words of memory out of 5000000
- 4840 multiletter control sequences out of 15000+600000
- 13270 words of font info for 46 fonts, out of 8000000 for 9000
+ 1330 strings out of 493315
+ 15912 string characters out of 6137904
+ 83346 words of memory out of 5000000
+ 4846 multiletter control sequences out of 15000+600000
+ 13617 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 23i,6n,19p,1223b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mss8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-t12.pfb>
-Output written on meiyu.pdf (6 pages, 81559 bytes).
+ 23i,6n,19p,1227b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on meiyu.pdf (7 pages, 100598 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
