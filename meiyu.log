@@ -1,0 +1,306 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  24 MAR 2014 19:31
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**meiyu.tex
+(./meiyu.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(./AGUTeX.cls
+
+
+ AGUTeX Journal Style, American Geophysical Union 
+ This version is dated Feb 9, 2008
+
+
+
+LaTeX Warning: You have requested document class `AGUTeX',
+               but the document class provides `agutex'.
+
+Document Class: agutex 02/09/2008
+\c@chapter=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@figure=\count83
+\c@table=\count84
+\mathindent=\dimen102
+\abovefigcaptionskip=\skip41
+\abovetabcaptionskip=\skip42
+\abovetableskip=\skip43
+\belowtabcaptionskip=\dimen103
+\landscapebox=\box26
+\c@plate=\count85
+\savecurrtable=\box27
+\abovetabularskip=\skip44
+\belowtabularskip=\skip45
+\timing=\count86
+\hourcount=\count87
+\oldtime=\count88
+\totpages=\count89
+\belowtitleskip=\dimen104
+\abovesubtitleskip=\dimen105
+\belowsubtitleskip=\dimen106
+\aboveauthorskip=\dimen107
+\belowauthorskip=\dimen108
+\thanksnum=\count90
+\dothanks=\count91
+\thankscounter=\count92
+\titlethanksnum=\count93
+\dotitlethanks=\count94
+\titlethankscounter=\count95
+\thanksnum=\count96
+\dothanks=\count97
+\thankscounter=\count98
+\authorwidth=\dimen109
+\authorbaselineskip=\dimen110
+\aboveaffilskip=\dimen111
+\belowaffilskip=\dimen112
+\affilwidth=\dimen113
+\aboveabstractskip=\dimen114
+\belowabstractskip=\dimen115
+\belowabstractnameskip=\dimen116
+\abstractmargin=\dimen117
+\abovereceivedskip=\skip46
+\aboverevisedskip=\skip47
+\aboveacceptedskip=\skip48
+\abovepublishededskip=\skip49
+\barticle=\box28
+\thanksbox=\box29
+\titlethanksbox=\box30
+\c@appendnum=\count99
+\footnum=\count100
+\savefootnum=\count101
+\ackskip=\skip50
+\saveparskip=\dimen118
+\captionskip=\dimen119
+\PushOneColTopFig=\dimen120
+\PushOneColBotFig=\dimen121
+\PushOneColTopTab=\dimen122
+\PushOneColBotTab=\dimen123
+\PushTwoColTopFig=\dimen124
+\PushTwoColBotFig=\dimen125
+\PushTwoColTopTab=\dimen126
+\PushTwoColBotTab=\dimen127
+\intextfloatskip=\skip51
+\c@appfigure=\count102
+\c@apptable=\count103
+\c@appplate=\count104
+\checkforspace=\dimen128
+\savetopinsert=\box31
+\savebotinsert=\box32
+\secondsavetopinsert=\box33
+\secondsavebotinsert=\box34
+\firstcolbox=\box35
+\secondcolbox=\box36
+\thefirstbox=\box37
+\thesecondbox=\box38
+\firstcol=\dimen129
+\secondcol=\dimen130
+\checkheight=\dimen131
+\loopnum=\count105
+\firstcolsavefignum=\count106
+\footnotebox=\box39
+\ColUsed=\dimen132
+\FigSpace=\dimen133
+\testdblbotins=\box40
+\pageloopnum=\count107
+\endcolsavetopinsert=\box41
+\endcolsavebotinsert=\box42
+\testpagesize=\box43
+\savelastskip=\dimen134
+\partialpage=\box44
+\figandtabnumber=\count108
+\figandtabbox=\box45
+\pagefloatnumber=\count109
+\sizeoffloat=\box46
+\bogus=\count110
+\figinsert=\insert233
+\herebox=\box47
+\endfigbox=\box48
+\spanbox=\box49
+\dbltopins=\box50
+\dblbotins=\box51
+\dblbotskip=\skip52
+\dblfigandtabnumber=\count111
+\dblfigandtabbox=\box52
+\dblloopnum=\count112
+\savedblfigandtabnumber=\count113
+\dblspanherebox=\box53
+\bigpagenum=\count114
+\littlepagenum=\count115
+\wholepagenum=\count116
+\@cprtype=\count117
+\@slugcmmntwidth=\dimen135
+\affilnum=\count118
+\totalaffils=\count119
+\figcount=\count120
+\saveequation=\count121
+\c@currlett=\count122
+\notationwidth=\dimen136
+\betweennotationskip=\skip53
+\WidestEntry=\dimen137
+\premulticols=\dimen138
+\page@free=\dimen139
+\partial@page=\box54
+\multicoltolerance=\count123
+\doublecol@number=\count124
+\multicolbaselineskip=\skip54
+\c@collectmore=\count125
+\loopcount=\count126
+\fixdimen=\dimen140
+\c@unbalance=\count127
+\savedimen=\dimen141
+\savehsize=\dimen142
+\mycolumnwidth=\dimen143
+\saveparindent=\dimen144
+\saveparskip=\dimen145
+\abstractwidth=\dimen146
+\currlastnumber=\count128
+\altaffilbox=\box55
+\sectskip=\skip55
+\belowsectionskip=\skip56
+\subsectskip=\skip57
+\belowsubsectskip=\skip58
+\subsubsectskip=\skip59
+\belowsubsubsectskip=\skip60
+\c@subsubsubsection=\count129
+\captionwidth=\dimen147
+\widecaptionwidth=\dimen148
+\landscapecaptionwidth=\dimen149
+\@temptokenb=\toks14
+\beforeendskip=\skip61
+
+
+ GRL class option, October 1, 2001,
+ \documentclass[grl]{AGUTeX}
+ ``Geophysical Research Letters'', 
+ Published by American Geophysical Union
+
+
+\titlesize=\dimen150
+LaTeX Info: Redefining \cite on input line 7505.
+\c@NAT@ctr=\count130
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count131
+\output=\toks15
+\linenoprevgraf=\count132
+\linenumbersep=\dimen151
+\linenumberwidth=\dimen152
+\c@linenumber=\count133
+\c@pagewiselinenumber=\count134
+\c@LN@truepage=\count135
+\c@internallinenumber=\count136
+\c@internallinenumbers=\count137
+\quotelinenumbersep=\dimen153
+\bframerule=\dimen154
+\bframesep=\dimen155
+\bframebox=\box56
+LaTeX Info: Redefining \\ on input line 3056.
+) (./meiyu.aux)
+\openout1 = `meiyu.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 163.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 163.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 163.
+ [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+[2]
+
+Package natbib Warning: Citation `Ding2005' on page 3 undefined on input line 1
+72.
+
+
+Package natbib Warning: Citation `Held2006' on page 3 undefined on input line 1
+74.
+
+
+Package natbib Warning: Citation `Lintner2007' on page 3 undefined on input lin
+e 174.
+
+
+Package natbib Warning: Citation `2009' on page 3 undefined on input line 174.
+
+[3]
+
+Package natbib Warning: Citation `Nagashima2011' on page 4 undefined on input l
+ine 176.
+
+
+Package natbib Warning: Citation `Nagashima2013' on page 4 undefined on input l
+ine 176.
+
+
+Package natbib Warning: Citation `Roe2009' on page 4 undefined on input line 17
+6.
+
+
+Package natbib Warning: Citation `Sampe2010' on page 4 undefined on input line 
+178.
+
+
+Package natbib Warning: Citation `Chen2014' on page 4 undefined on input line 1
+78.
+
+
+Package natbib Warning: Citation `Liang1998' on page 4 undefined on input line 
+178.
+
+[4]
+
+Package natbib Warning: Citation `Ding2005' on page 5 undefined on input line 1
+80.
+
+
+Package natbib Warning: Citation `Yatagai2012' on page 5 undefined on input lin
+e 180.
+
+
+Package natbib Warning: Citation `Schiemann2009' on page 5 undefined on input l
+ine 182.
+
+[5]
+
+Package natbib Warning: There were undefined citations.
+
+[6] (./meiyu.aux) ) 
+Here is how much of TeX's memory you used:
+ 1320 strings out of 493315
+ 15828 string characters out of 6137904
+ 82346 words of memory out of 5000000
+ 4840 multiletter control sequences out of 15000+600000
+ 13270 words of font info for 46 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 23i,6n,19p,1223b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mss8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t12.pfb>
+Output written on meiyu.pdf (6 pages, 81559 bytes).
+PDF statistics:
+ 47 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
