@@ -58,6 +58,10 @@
 % and \linenumbers*[1]command, below:
 
 \usepackage{lineno}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{textcomp}
+
 \linenumbers*[1]
 
 %  To add line numbers to lines with equations:
@@ -76,7 +80,7 @@
 %
 %  Uncomment the following command to include .eps files
 %  (comment out this line for draft format):
-%  \usepackage[dvips]{graphicx}
+\usepackage[final]{graphicx}
 %
 %  Uncomment the following command to allow illustrations to print
 %   when using Draft:
@@ -201,7 +205,7 @@ The analysis contained in this paper relies on two data sets, APHRODITE and Schi
 	
 \section{Dynamics}
 
-	The covariance of Meiyu front positions and tropospheric jet latitudes previously demonstrated also clarifies a dynamical reason for their seasonality. As shown, Meiyu season consists of intense rainfall from June 1st to July 1st with a shift in latitude of almost 10 degrees over the course of that month. After . The lens of forced convergence by the Tibetan Plateau. In the climatological mean, \cite{Chen2014} demonstrated that the Meiyu front exists primarily due to forced mechanical convergence by the Tibetan Plateau upstream. They showed this by using experiments in which the Tibetan Plateau's height was reduced by 95\%. We argue that our results similarly show the role of the Tibetan Plateau in generating a strong Meiyu front. When the jet impinges on the Tibetan Plateau from late May to early July, the high topography induces meanders that force standing waves in jet configuration, pushing it further north from 80E to 100E and then further south into China. This in turn anchors strong rainfall along the Meiyu front in China. When the jet moves further north to its preferred summer position, which occurs just north of the Tibetan Plateau, it is no longer deflected and the front is significantly weaker, though events do still occur as seen in Figure 1. We confirm this hypothesis by showing the climatology of precipitable water vapor from SSRI from time A, time B, time C and time D (last figure). During the early and late stages of Meiyu season precipitable water content is concentrated along bands that intersect central China. However, in July and August, the latitude of the moisture vapor front has shifted much further north, over northern China, and both the Bay of Bohai and the Korean Peninsula and Japan all have much greater precipitable water. However, the lack of mechanical forcing is shown by the weakness of rainfall in those events (\lessthan 20 mm/day versus 25-30 mm/day over southern and central China during Meiyu season.
+	The covariance of Meiyu front positions and tropospheric jet latitudes previously demonstrated also clarifies a dynamical reason for their seasonality. As shown, Meiyu season consists of intense rainfall from June 1st to July 1st with a shift in latitude of almost 10 degrees over the course of that month. After . The lens of forced convergence by the Tibetan Plateau. In the climatological mean, \cite{Chen2014} demonstrated that the Meiyu front exists primarily due to forced mechanical convergence by the Tibetan Plateau upstream. They showed this by using experiments in which the Tibetan Plateau's height was reduced by 95\%. We argue that our results similarly show the role of the Tibetan Plateau in generating a strong Meiyu front. When the jet impinges on the Tibetan Plateau from late May to early July, the high topography induces meanders that force standing waves in jet configuration, pushing it further north from 80E to 100E and then further south into China. This in turn anchors strong rainfall along the Meiyu front in China. When the jet moves further north to its preferred summer position, which occurs just north of the Tibetan Plateau, it is no longer deflected and the front is significantly weaker, though events do still occur as seen in Figure 1. We confirm this hypothesis by showing the climatology of precipitable water vapor from SSRI from time A, time B, time C and time D (last figure). During the early and late stages of Meiyu season precipitable water content is concentrated along bands that intersect central China. However, in July and August, the latitude of the moisture vapor front has shifted much further north, over northern China, and both the Bay of Bohai and the Korean Peninsula and Japan all have much greater precipitable water. However, the lack of mechanical forcing is shown by the weakness of rainfall in those events (\textless 20 mm/day versus 25-30 mm/day over southern and central China during Meiyu season.
 
 %%% End of body of article:
 %  ACKNOWLEDGMENTS
@@ -240,7 +244,7 @@ APHRODITE is...
 % AGU does not want a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
 
 \bibliographystyle{agufull08}
-\bibliography{"/Users/Siwen/Desktop/Spring 2014/meiyu"}
+\bibliography{"/Users/Siwen/Desktop/Summer 2014/meiyu"}
 
 %% ------------------------------------------------------------------------ %%
 %
@@ -261,11 +265,20 @@ APHRODITE is...
 %----------------
 % EXAMPLE FIGURE
 %
-% \begin{figure}
-% \noindent\includegraphics[width=20pc]{samplefigure.eps}
-% \caption{Caption text here}
-% \label{figure_label}
-% \end{figure}
+
+%FIGURE 1 - Hovmoller diagram of Meiyu latitude occupancy, 1951-2007
+\begin{figure}
+\noindent\includegraphics[width=36pc]{fig1meiyu_climo.pdf}
+\caption{Climatology of the Meiyu Front, 1951-2007. 1) Pre-Meiyu 2) Meiyu 3) Cyclone season in Southern China 4) Storms advected by summer jet}
+\label{figure_label}
+\end{figure}
+
+%FIGURE 1b - Same thing, but only MJJAS
+\begin{figure}
+\noindent\includegraphics[width=36pc]{fig1bmeiyu_climo_mjjas.pdf}
+\caption{Climatology of the Meiyu Front, 1951-2007. 1) Pre-Meiyu 2) Meiyu 3) Cyclone season in Southern China 4) Storms advected by summer jet. MJJAS only.}
+\label{figure_label}
+\end{figure}
 
 \end{document}
 
