@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 JUN 2014 14:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 JUN 2014 15:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -440,18 +440,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: e/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
@@ -461,60 +450,77 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+Package epstopdf Warning: Drivers other than `pdftex.def' are not supported.
+
+)
 LaTeX Font Info:    Try loading font information for U+msa on input line 167.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 167.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+)
+\figandtabbox0=\box59
 
-] [2]
 
-Package natbib Warning: Citation `Muller2011' on page 3 undefined on input line
+Package natbib Warning: Citation `Muller2011' on page 1 undefined on input line
  178.
 
-[3] [4] [5] [6]
+[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 208.
 
- (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omlcmr.fd
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 208.
+ (./meiyu.bbl
+Missing character: There is no ‚ in font cmr8!
+Missing character: There is no Ä in font cmr8!
+Missing character: There is no ú in font cmr8!
+Missing character: There is no ‚ in font cmr8!
+Missing character: There is no Ä in font cmr8!
+Missing character: There is no ù in font cmr8!
 
-[7] (./meiyu.bbl
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
- [8] [9])
-<fig1meiyu_climo.pdf, id=42, 874.59248pt x 323.87901pt>
-File: fig1meiyu_climo.pdf Graphic file (type pdf)
+[2])
 
-<use fig1meiyu_climo.pdf>
-Package pdftex.def Info: fig1meiyu_climo.pdf used on input line 271.
-(pdftex.def)             Requested size: 432.0pt x 159.98207pt.
+LaTeX Warning: File `fig1meiyu_climo_boxes.pdf' not found on input line 271.
 
-<fig1bmeiyu_climo_mjjas.pdf, id=43, 864.22874pt x 397.485pt>
-File: fig1bmeiyu_climo_mjjas.pdf Graphic file (type pdf)
 
-<use fig1bmeiyu_climo_mjjas.pdf>
-Package pdftex.def Info: fig1bmeiyu_climo_mjjas.pdf used on input line 278.
+./meiyu.tex:271: LaTeX Error: File `fig1meiyu_climo_boxes.pdf' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 ...cs[width=36pc]{fig1meiyu_climo_boxes.pdf}
+                                                  
+? 
+./meiyu.tex:271: Emergency stop.
+ ...                                              
+                                                  
+l.271 ...cs[width=36pc]{fig1meiyu_climo_boxes.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 3464 strings out of 493315
+ 45497 string characters out of 6137904
+ 125942 words of memory out of 5000000
+ 6875 multiletter control sequences out of 15000+600000
+ 16094 words of font info for 58 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 37i,7n,26p,2069b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+./meiyu.tex:271:  ==> Fatal error occurred, no output PDF file produced!
+bmeiyu_climo_mjjas.pdf used on input line 278.
 (pdftex.def)             Requested size: 432.0pt x 198.68742pt.
 
 
@@ -545,7 +551,7 @@ l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on meiyu.pdf (10 pages, 586092 bytes).
+Output written on meiyu.pdf (10 pages, 586284 bytes).
 PDF statistics:
  155 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
