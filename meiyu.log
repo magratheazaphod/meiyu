@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  6 JUN 2014 17:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 SEP 2014 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -385,11 +385,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen165
 \Gin@req@width=\dimen166
 )
-(./meiyu.aux
-
-LaTeX Warning: Label `figure_label' multiply defined.
-
-)
+(./meiyu.aux)
 \openout1 = `meiyu.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
@@ -484,77 +480,76 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 159.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2]
+]
+Overfull \hbox (20.4768pt too wide) in paragraph at lines 159--159
+[]\OT1/cmr/m/n/12 This ab-stract must be 150 words or less. The con-tents of th
+e ab-stract count
+ []
 
-Package natbib Warning: Citation `Muller2011' on page 3 undefined on input line
- 168.
+[2]
+
+Package natbib Warning: Citation `Kosaka' on page 3 undefined on input line 169
+.
 
 [3] [4] [5] [6] [7]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 218.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 270.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 218.
- [8] (./meiyu.bbl
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 270.
+ [8] [9]
+(./meiyu.bbl
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
+ [10]) <fig1_dingchan.pdf, id=48, 905.3825pt x 1299.9065pt>
+File: fig1_dingchan.pdf Graphic file (type pdf)
 
-[9] [10]) <fig1meiyu_climo.pdf, id=48, 874.59248pt x 323.87901pt>
-File: fig1meiyu_climo.pdf Graphic file (type pdf)
+<use fig1_dingchan.pdf>
+Package pdftex.def Info: fig1_dingchan.pdf used on input line 341.
+(pdftex.def)             Requested size: 432.0pt x 620.23889pt.
 
-<use fig1meiyu_climo.pdf>
-Package pdftex.def Info: fig1meiyu_climo.pdf used on input line 281.
-(pdftex.def)             Requested size: 432.0pt x 159.98207pt.
 
-<fig1bmeiyu_climo_mjjas.pdf, id=49, 864.22874pt x 397.485pt>
-File: fig1bmeiyu_climo_mjjas.pdf Graphic file (type pdf)
-
-<use fig1bmeiyu_climo_mjjas.pdf>
-Package pdftex.def Info: fig1bmeiyu_climo_mjjas.pdf used on input line 288.
-(pdftex.def)             Requested size: 432.0pt x 198.68742pt.
+LaTeX Warning: Float too large for page by 40.4414pt on input line 344.
 
 
 Package natbib Warning: There were undefined citations.
 
-[11 <./fig1meiyu_climo.pdf>] [12 <./fig1bmeiyu_climo_mjjas.pdf>] (./meiyu.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[11] [12 <./fig1_dingchan.pdf>] (./meiyu.aux) ) 
 Here is how much of TeX's memory you used:
- 3967 strings out of 493315
- 52646 string characters out of 6137904
- 124164 words of memory out of 5000000
- 7366 multiletter control sequences out of 15000+600000
+ 3962 strings out of 493315
+ 52483 string characters out of 6137904
+ 124125 words of memory out of 5000000
+ 7362 multiletter control sequences out of 15000+600000
  15863 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,6n,26p,2069b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.p
-fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on meiyu.pdf (12 pages, 612678 bytes).
+ 37i,6n,26p,2069b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1200.pfb>
+Output written on meiyu.pdf (12 pages, 2689524 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 424 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
