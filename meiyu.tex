@@ -186,46 +186,63 @@ This abstract must be 150 words or less. The contents of the abstract count towa
 
 %I am debating the best way of showing the algorithm - other options: Simply write it out in one dreary paragraph, or use a diagram. If diagram, have to be careful since each figure counts as 500 words.
 
-For each day from 1 January 1951 to 31 December 2007 (20,819 total), our Meiyu algorithm determines. In addition, some days feature two frontal events, each of which are separately detected. The algorithm follows the subsequent checklist:
+\textbf{List version}
+
+For each day from 1 January 1951 to 31 December 2007 (20,819 total), the algorithm determines whether a frontal event is present or not inside the window of 105-123E and 20-40N, and if it exists returns its properties. In addition, it is observed that some days feature two frontal events. If a primary event is detected, the algorithm therefore checks for a secondary fit as well. The algorithm follows the subsequent checklist:
 
 \begin{enumerate}
-	\item At each longitude, we find the latitude .We find the lat If a 5\textdegree swath (20 points) of maxima exceeds 10 mm/day, we move to step 2. Otherwise it is a no-Meiyu day.
+	\item The maximum daily rainfall for each longitude is found. If there exists a 5\textdegree continuous chain of maxima (20 points in a row) exceeding 10 mm/day, we proceed to step 2 and attempt a fit. Otherwise, the day is thrown out.
 	
-	\item Given a preliminary fit, we perform a weighted least-squares linear fit of the \textit{latitudes} with the intensity as weight.
+	\item A weighted least-squares linear fit of the \textit{latitudes} of the maxima is attempted, using the intensity of the maxima as weight.
 	
-	\item A recursive algorithm. Using the initial fit as guideline, we select a new set of maxima within \textit{k} degrees of the best fit line. $k$ is progressively decreased with each iteration.
+	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again repeat the weighted linear fit in step 2. $k$ is progressively decreased with each iteration.
 	
-	\item We now have a best fit estimate. This allows us to calculate the ``quality score'' $Q_1$, which equals the fraction of total daily precipitation inside our domain that falls within 5 degrees of our best fit.
+	\item Using our final best estimate from step 3, we define the ``quality score'' $Q$ as the fraction of total daily precipitation that falls within 5 degrees of this fit line.
 	
-	\item The algorithm now looks for a secondary front as follows:
+	\item As mentioned, we check for a secondary front. We remove all precipitation within the primary front and again apply the front criterion in step 1 to the leftover rainfall map. If passed, steps 2-4 are repeated to find a best estimate for a secondary front.
+	
+	\item If a secondary front is found, two additional quality scores $Q_1$ and $Q_2$ are determined. $Q_1$ is defined as the fraction of rainfall contained in the primary front \textit{after removing all rainfall associated with the secondary front}. Likewise $Q_2$ is the Q score of the second front after removing all rainfall from the primary front.
+			
+\end{enumerate} 
+	
+In some cases, a fit will be achieved, but its quality will be too poor to include in our statistics. To check for this scenario, we use the quality scores $Q$, $Q_1$ and $Q_2$, and the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall that falls on the island of Taiwan. If $TW > 20\%$, the day is thrown out. Such days are dominated by a local storm reaching Taiwan and rarely exhibit a strong front. Subsequently there are two ways a day may be included: 
+	
+\begin{enumerate}
+	\item if $Q>.6$, the day is included in our statistics. If $Q_2$ also is greater than .6, the day will be classified as a double front day.
+		
+	\item If $Q<.6$, a day can only be included if both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$. In such cases, the quality of fit is initially obscured by the presence of multiple fronts. We classify the day as a double front day.
+\end{enumerate}	
+		
+	In practice, days with secondary fronts constitute a small fraction of all days ($>$ 5\%) but are more common during certain seasons.
+		
+%Previous attempt at a paragraph explanation - is it acceptable to do a numbered list in a scientific paper?
+%	We develop an adaptive algorithm to detect the position of the Meiyu front on a given day. For each day from 1951 to 2007 (20819 days total), we first find the quantity and latitude of maximum rainfall for each longitude point. Then, we use the simple criterion of there being a 5 degree continuous chain of maxima over 10 mm/day (20 consecutive cells). We then try to linearly fit these maxima, excluding any maximum that is more than 5 degrees of latitude away from the precipitation centroid given by $<L> =\frac{\sum P_i y_i}{\sum P}$. Next using, this first fit as starting point, we now find the maxima within a $n$-degree latitude window of the best fit line, where we progressively shrink $n$ with each iteration. The choice of $n$ does not greatly impact fit quality. In our experiment, we repeated the fit for $n$= ... . Given a final fit, we report the latitude of the front at 105\textdegree E, the mean intensity of rainfall along the center of its axis and the tilt (in degrees). We also report a quality score $Q$ which indicates the percentage of rainfall that falls within 3 degrees of our best fit line, such that statistical calculations can be repeated only days with a clear front for the purpose of confirmation. 
+
+%new version of paragraph
+	\textbf{Paragraph version}
+
+	For each day from January 1 1951 to December 31 2007 (20,819 days at all) we determine whether there is a frontal event, whether there is an additional secondary front, and the characteristics of each. To detect a front, we find the maximum daily rainfall at each longitude inside the window 105-123\textdegree E and 20-40\textdegree N. If a 5\textdegree continuous chain of maxima exceeds 10 mm/day, we seek a fit; otherwise the day is discarded. The fitting algorithm performs a linear least-squares fit of the \textit{latitudes} of each of the maxima, weighted by the intensity of the maximum. Next, we use a recursive fit wherein we find a new set of maxima, requiring that they be within $n$ degrees of the previous best fit line. $n$ is progressively decreased to tighten the window and converge on an optimal fit. Given this fit, we can calculate a quality score $Q$, which is the percentage of total rainfall in our window that falls within 5 degrees of our best fit line. A score of $Q > .6$ constitutes a good score, as further explained below.
+	
+	In addition, we determine from observation that some days feature two separate bands of strong rainfall. We would like to include such events. Therefore, after fitting a primary event, we check for a secondary event by removing the rainfall associated with the first best fit line, and then repeating all of the steps of the previous paragraph. If a secondary event is detected, we may define two extra quality scores $Q_1$ and $Q_2$, where $Q_1$ is the percentage of rainfall within \textit{after removing rainfall associated with the secondary fit}, and $Q_2$ likewise is the Q score of the secondary fit after removing rainfall from the primary fit.
+	
+	Finally, in some cases our front criterion will be satisfied, but we are not able to achieve a good fit. We use the quality scores $Q$, $Q_1$ and $Q_2$ to check for this case, as well as one additional metric, the ``Taiwan fraction'' ($TW$), defined as the percentage of daily rainfall that falls on Taiwan. First of all, all days where $TW > 20\%$ are thrown out. Such days are dominated by a local storm reaching Taiwan, and rarely exhibit a coherent front. Subsequently there are two ways a day may be included: 
 	
 	\begin{enumerate}
+		\item if $Q>.6$, the day is included in our statistics. If $Q_2$ also is greater than .6, the day will be classified as a double front day.
 		
-		\item All precipitation within the primary front is removed. The front criterion from Step 1 is repeated. If passed, steps 2-4 are repeated.
+		\item If $Q<.6$, a day can only be included if both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$. In such cases, the quality of fit is initially obscured by the presence of multiple fronts. We classify the day as a double front day.
+	\end{enumerate}	
 		
-		\item If a secondary Meiyu is found, we also calculate $Q_2$, which is the fraction of precip inside of the secondary front \textit{with primary front removed}, and $Q_{1\_alt}$, which is precip frac inside first front \textit{with secondary front removed}.
-		
-	\end{enumerate} 
+	In practice, days with secondary fronts constitute a small fraction of all days ($>$ 5\%) but are more common during certain seasons.
 	
-	\item The day is now classified as either a primary Meiyu day, a primary AND secondary Meiyu day, or a no-Meiyu day. We use the following criteria:
-	
-	\begin{enumerate}
-		\item We define the ``Taiwan fraction'' (TW) as the percentage of daily rainfall that falls over Taiwan. If TW > 20\%, there is no Meiyu. We do this because...
-		
-		\item If $Q_1 > .6$, the primary Meiyu is counted. If there is a secondary front and $Q_2 >.6$, the secondary front is also counted.
-		
-		\item If $Q_1 < .6$, then we check if both $Q_{1\_alt}$ and $Q_2$ $>$ .6. In these (rare) cases, both fronts are counted in our statistics. Otherwise, it is a no-Meiyu day. This allows us to find double front days where the original $Q_1$ was too low.
-		
-	\end{enumerate}
-\end{enumerate}
+\subsection{Statistics}	
 
-	We develop an adaptive algorithm to detect the position of the Meiyu front on a given day. For each day from 1951 to 2007 (20819 days total), we first find the quantity and latitude of maximum rainfall for each longitude point. Then, we use the simple criterion of there being a 5 degree continuous chain of maxima over 10 mm/day (20 consecutive cells). We then try to linearly fit these maxima, excluding any maximum that is more than 5 degrees of latitude away from the precipitation centroid given by $<L> =\frac{\sum P_i y_i}{\sum P}$. Next using, this first fit as starting point, we now find the maxima within a $n$-degree latitude window of the best fit line, where we progressively shrink $n$ with each iteration. The choice of $n$ does not greatly impact fit quality. In our experiment, we repeated the fit for $n$= ... . Given a final fit, we report the latitude of the front at 105\textdegree E, the mean intensity of rainfall along the center of its axis and the tilt (in degrees). We also report a quality score $Q$ which indicates the percentage of rainfall that falls within 3 degrees of our best fit line, such that statistical calculations can be repeated only days with a clear front for the purpose of confirmation. 
+	Figure 1a reproduces a plot similar to Ding and Chan's 200x paper, but focusing more narrowly on eastern China.  Figure 1b shows a H\"ovmoller diagram of the latitudes occupied by the Meiyu Front over all 57 years, including both primary and secondary events, with a 5-day and 2\textdegree smoothing. It can be seen that mean rainfall and Meiyu occurrence are not entirely equivalent. For instance, the August peak in southern China rainfall (about 20\textdegree N) does not correspond to a surge in Meiyu events. Certain periods of particular behavior can be discerned: . These correspond to Ding and Chan's ... Table 1 shows the mean characteristics of fronts in each of these periods and their variance.
 	
-\subsection{Defining Meiyu season}	
-
-	Figure 1 shows a H\"ovmoller diagram of latitudes occupied by the Meiyu Front in the 57-year mean. Four local maxima of Meiyu events can be observed: 1) A "pre-Meiyu" from May 1-31 over southern China (Ding and Chan's first position); 2) Meiyu Season, in which the preferred latitude of the front shifts by almost ten degrees from June 1-July 15 (Ding and Chan stage 2); 3) A "post-Meiyu" of persistent  4) Cyclone season over Southern China. The storms during season 4 can be distinguished from earlier Meiyu events in southern China because their propagation direction is westward, opposite to eastward Meiyu storms. The combination of stages 3 and 4 corresponds to the third stage of the Meiyu in Ding and Chan, but only the core of Meiyu season (their stage 2) features significant front migration. Figure 2 shows that even in winter, rainfall events in China tend to be frontal, but their frequency increases up to almost 100\% during Meiyu Season, and a surge in intensity can be seen around June 1 where mean rainfall along the front exceeds 25 mm/day. The mean tilt of the front is approximately 8 degrees.
+	%the following were my observations from the previous version of Figure 1 - may no longer be accurate, but saving them just in case.
+	%Four local maxima of Meiyu events can be observed: 1) A "pre-Meiyu" from May 1-31 over southern China (Ding and Chan's first position); 2) Meiyu Season, in which the preferred latitude of the front shifts by almost ten degrees from June 1-July 15 (Ding and Chan stage 2); 3) A "post-Meiyu" of persistent  4) Cyclone season over Southern China. The storms during season 4 can be distinguished from earlier Meiyu events in southern China because their propagation direction is westward, opposite to eastward Meiyu storms. The combination of stages 3 and 4 corresponds to the third stage of the Meiyu in Ding and Chan, but only the core of Meiyu season (their stage 2) features significant front migration. Figure 2 shows that even in winter, rainfall events in China tend to be frontal, but their frequency increases up to almost 100\% during Meiyu Season, and a surge in intensity can be seen around June 1 where mean rainfall along the front exceeds 25 mm/day. The mean tilt of the front is approximately 8 degrees.
 	
-	It can be seen that mean rainfall and Meiyu occurrence are not entirely equivalent, since the Southern China peak in August does not correspond to a surge in Meiyu events.
+	We test for the existence of statistically significant differences between 1951-1979 and 1980-2007 for each of the time periods mentioned above.
 	
 \section{Preferred jet positions}
 	
@@ -267,7 +284,10 @@ For each day from 1 January 1951 to 31 December 2007 (20,819 total), our Meiyu a
 	
 \section{Dynamics}
 
-	The covariance of Meiyu front positions and tropospheric jet latitudes previously demonstrated also clarifies a dynamical reason for their seasonality. As shown, Meiyu season consists of intense rainfall from June 1st to July 1st with a shift in latitude of almost 10 degrees over the course of that month. After . The lens of forced convergence by the Tibetan Plateau. In the climatological mean, \cite{Chen2014} demonstrated that the Meiyu front exists primarily due to forced mechanical convergence by the Tibetan Plateau upstream. They showed this by using experiments in which the Tibetan Plateau's height was reduced by 95\%. We argue that our results similarly show the role of the Tibetan Plateau in generating a strong Meiyu front. When the jet impinges on the Tibetan Plateau from late May to early July, the high topography induces meanders that force standing waves in jet configuration, pushing it further north from 80E to 100E and then further south into China. This in turn anchors strong rainfall along the Meiyu front in China. When the jet moves further north to its preferred summer position, which occurs just north of the Tibetan Plateau, it is no longer deflected and the front is significantly weaker, though events do still occur as seen in Figure 1. We confirm this hypothesis by showing the climatology of precipitable water vapor from SSRI from time A, time B, time C and time D (last figure). During the early and late stages of Meiyu season precipitable water content is concentrated along bands that intersect central China. However, in July and August, the latitude of the moisture vapor front has shifted much further north, over northern China, and both the Bay of Bohai and the Korean Peninsula and Japan all have much greater precipitable water. However, the lack of mechanical forcing is shown by the weakness of rainfall in those events (\textless 20 mm/day versus 25-30 mm/day over southern and central China during Meiyu season.
+	The covariance of Meiyu front positions and tropospheric jet latitudes previously demonstrated also clarifies a dynamical reason for their seasonality. As shown, Meiyu season consists of intense rainfall from June 1st to July 1st with a shift in latitude of almost 10 degrees over the course of that month. After  In the climatological mean, \cite{Chen2014} demonstrated that the Meiyu front exists primarily due to forced mechanical convergence by the Tibetan Plateau upstream. The season of peak rainfall and peak Meiyu frequency corresponds directly to the period when the westerly jet is impinging on the Tibetan Plateau upstream. When the jet moves further north to its preferred summer position, which occurs just north of the Tibetan Plateau, it is no longer deflected and the front is significantly weaker, and we transition to a preferred double-front state as seen in figure 1b. 
+	
+	%as discussed with Jake, probably not necessary to this argument, although still interesting...
+	%We confirm this hypothesis by showing the climatology of precipitable water vapor from SSRI from time A, time B, time C and time D (last figure). During the early and late stages of Meiyu season precipitable water content is concentrated along bands that intersect central China. However, in July and August, the latitude of the moisture vapor front has shifted much further north, over northern China, and both the Bay of Bohai and the Korean Peninsula and Japan all have much greater precipitable water. However, the lack of mechanical forcing is shown by the weakness of rainfall in those events (\textless 20 mm/day versus 25-30 mm/day over southern and central China during Meiyu season.
 
 \section{Conclusion}
  Since the behavior of the jet is coupled to global climate variability, our work holds the promise of attributing the regional rainfall trend in China to global-scale change.
