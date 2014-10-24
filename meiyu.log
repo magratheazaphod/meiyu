@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  3 SEP 2014 14:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  24 OCT 2014 11:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -486,132 +486,49 @@ Overfull \hbox (20.4768pt too wide) in paragraph at lines 159--159
 e ab-stract count
  []
 
-[2]
-
-Package natbib Warning: Citation `Sampe2010' on page 3 undefined on input line 
-169.
-
-
-Package natbib Warning: Citation `Chen2014' on page 3 undefined on input line 1
-69.
-
-
-Package natbib Warning: Citation `Ding2005' on page 3 undefined on input line 1
-69.
-
-
-Package natbib Warning: Citation `Kosaka' on page 3 undefined on input line 169
-.
-
-
-Package natbib Warning: Citation `Schiemann2009' on page 3 undefined on input l
-ine 169.
-
-
-Package natbib Warning: Citation `Liang1998' on page 3 undefined on input line 
-169.
-
-[3]
-
-Package natbib Warning: Citation `Yatagai2012' on page 4 undefined on input lin
-e 178.
-
-
-Package natbib Warning: Citation `Schiemann2009' on page 4 undefined on input l
-ine 180.
-
-[4] [5] [6] [7] [8]
-
-Package natbib Warning: Citation `Nagashima2011' on page 9 undefined on input l
-ine 248.
-
-
-Package natbib Warning: Citation `Nagashima2013' on page 9 undefined on input l
-ine 248.
-
-
-Package natbib Warning: Citation `Schiemann2009' on page 9 undefined on input l
-ine 250.
-
-[9]
-
-Package natbib Warning: Citation `Chen2014' on page 10 undefined on input line 
-284.
-
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 284.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 284.
- [10]
-
-Package natbib Warning: Citation `Held2006' on page 11 undefined on input line 
-291.
-
-
-Package natbib Warning: Citation `Lintner2007' on page 11 undefined on input li
-ne 291.
-
-
-Package natbib Warning: Citation `Chou2009' on page 11 undefined on input line 
-291.
-
-(./meiyu.bbl
+[2] [3] [4] [5] [6] [7] [8] [9] [10] (./meiyu.bbl
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
- [11]) <fig1_dingchan.pdf, id=48, 905.3825pt x 1299.9065pt>
+ [11] [12])
+<fig1_dingchan.pdf, id=51, 905.3825pt x 1299.9065pt>
 File: fig1_dingchan.pdf Graphic file (type pdf)
-
-<use fig1_dingchan.pdf>
-Package pdftex.def Info: fig1_dingchan.pdf used on input line 355.
+ <use fig1_dingchan.pdf>
+Package pdftex.def Info: fig1_dingchan.pdf used on input line 365.
 (pdftex.def)             Requested size: 432.0pt x 620.23889pt.
 
 
-LaTeX Warning: Float too large for page by 40.4414pt on input line 358.
+LaTeX Warning: Float too large for page by 40.4414pt on input line 368.
 
-
-Package natbib Warning: There were undefined citations.
-
-[12] [13 <./fig1_dingchan.pdf>] (./meiyu.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[13] [14 <./fig1_dingchan.pdf>] (./meiyu.aux) ) 
 Here is how much of TeX's memory you used:
- 3966 strings out of 493315
- 52521 string characters out of 6137904
- 122466 words of memory out of 5000000
- 7364 multiletter control sequences out of 15000+600000
+ 3951 strings out of 493315
+ 52260 string characters out of 6137904
+ 123282 words of memory out of 5000000
+ 7352 multiletter control sequences out of 15000+600000
  16484 words of font info for 59 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,6n,26p,2069b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on meiyu.pdf (13 pages, 2668114 bytes).
+ 37i,6n,26p,1342b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-d
+ist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1200.pfb>
+Output written on meiyu.pdf (14 pages, 2671320 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 419 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
