@@ -1,14 +1,21 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
+\bibitem[{\textit{Biasutti et~al.}(2011)\textit{Biasutti, Yuter, Burleyson, and
+  Sobel}}]{Biasutti2011}
+Biasutti, M., S.~E. Yuter, C.~D. Burleyson, and A.~H. Sobel (2011), {Very high
+  resolution rainfall patterns measured by TRMM precipitation radar: seasonal
+  and diurnal cycles}, \textit{Clim. Dyn.}, \textit{39}(1-2), 239--258,
+  \doi{10.1007/s00382-011-1146-6}.
+
 \bibitem[{\textit{Chen and Bordoni}(2014)}]{Chen2014}
 Chen, J., and S.~Bordoni (2014), {Orographic Effects of the Tibetan Plateau on
-  the East Asian Summer Monsoon: An energetic perspective}, \textit{J.
-  Climate}, p. 140113153908002, \doi{10.1175/JCLI-D-13-00479.1}.
+  the East Asian Summer Monsoon: An Energetic Perspective}, \textit{J.
+  Climate}, \textit{27}(8), 3052--3072, \doi{10.1175/JCLI-D-13-00479.1}.
 
 \bibitem[{\textit{Chou et~al.}(2009)\textit{Chou, Neelin, Chen, and
   Tu}}]{Chou2009}
@@ -26,6 +33,12 @@ Ding, Y., and J.~C.~L. Chan (2005), {The East Asian summer monsoon: an
 Held, I., and B.~Soden (2006), {Robust responses of the hydrological cycle to
   global warming}, \textit{J. Climate}, \textit{19}(21), 5686--5699.
 
+\bibitem[{\textit{Kosaka et~al.}(2011)\textit{Kosaka, Xie, and
+  Nakamura}}]{Kosaka2011}
+Kosaka, Y., S.-P. Xie, and H.~Nakamura (2011), {Dynamics of Interannual
+  Variability in Summer Precipitation over East Asia *}, \textit{J. Climate},
+  \textit{24}(20), 5435--5453, \doi{10.1175/2011JCLI4099.1}.
+
 \bibitem[{\textit{Liang and Wang}(1998)}]{Liang1998}
 Liang, X., and W.~Wang (1998), {Associations between China monsoon rainfall and
   tropospheric jets}, \textit{Q. J. R. Meteorol. Soc.}, \textit{124}(May),
@@ -35,6 +48,11 @@ Liang, X., and W.~Wang (1998), {Associations between China monsoon rainfall and
 Lintner, B., and J.~D. Neelin (2007), {A prototype for convective margin
   shifts}, \textit{Geophys. Res. Lett.}, \textit{34}(5), L05,812,
   \doi{10.1029/2006GL027305}.
+
+\bibitem[{\textit{Murakami and Huang}(1984)}]{Murakami1984}
+Murakami, T., and W.-G. Huang (1984), {Orographic effects of the Tibetan
+  Plateau on the rainfall variations over central China during the 1979
+  summer}, \textit{J. Meteorol. Soc. Japan}, \textit{62}(6), 895--909.
 
 \bibitem[{\textit{Nagashima et~al.}(2011)\textit{Nagashima, Tada, Tani, Sun,
   Isozaki, Toyoda, and Hasegawa}}]{Nagashima2011}
@@ -48,11 +66,6 @@ Nagashima, K., R.~Tada, A.~Tani, Y.~Sun, Y.~Isozaki, S.~Toyoda, and H.~Hasegawa
 Nagashima, K., R.~Tada, and S.~Toyoda (2013), {Westerly jet-East Asian summer
   monsoon connection during the Holocene}, \textit{Geochemistry, Geophys.
   Geosystems}, \textit{14}(12), 5041--5053, \doi{10.1002/2013GC004931}.
-
-\bibitem[{\textit{Roe}(2009)}]{Roe2009}
-Roe, G. (2009), {On the interpretation of Chinese loess as a paleoclimate
-  indicator}, \textit{Quat. Res.}, \textit{71}(2), 150--161,
-  \doi{10.1016/j.yqres.2008.09.004}.
 
 \bibitem[{\textit{Sampe and Xie}(2010)}]{Sampe2010}
 Sampe, T., and S.-P. Xie (2010), {Large-Scale Dynamics of the Meiyu-Baiu
