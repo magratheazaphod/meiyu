@@ -62,6 +62,9 @@
 \usepackage{amsmath}
 \usepackage{textcomp}
 \usepackage[super]{nth}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{bm}
 \linenumbers*[1]
 
 %  To add line numbers to lines with equations:
@@ -150,11 +153,10 @@ Weihan Liu\altaffilmark{1}}
 % >> Do NOT include any \begin...\end commands within
 % >> the body of the abstract.
 
+%Needs to be 150 words or less - currently at 179.
 \begin{abstract}
-This abstract must be 150 words or less. The contents of the abstract count towards the total word count.
+A growing body of literature claims a change in summer rainfall distribution over China after the late 1970s (the ``South Flood North Drought''). In these months, rainfall characteristically occurs along zonal bands with a meridional tilt (the Meiyu Front). We construct a novel database that tracks all occurrences of frontal rainfall over China on each day from 1951 to 2007 from APHRODITE rain gauge data, and reports their latitude, strength, tilt and width. An unprecedented Meiyu climatology is obtained. In addition, the latitude of frontal events is known to correspond to the position of the tropospheric jet. Therefore, we search for correspondence between front and jet position, and coupled changes in behavior with time. Two robust changes are observed in front behavior between the time periods 1951-1979 and 1980-2007: 1) A significant decrease in the frequency of pre-Meiyu (May) frontal events after 1979 and 2) a southward shift in late season Meiyu events (mid-July to August) found both in the front and jet databases. Our results hold the promise of coupling regional climate change to \nth{21} century global change.
 \end{abstract}
-
-%  and tables.
 
 \begin{article}
 
@@ -326,7 +328,7 @@ From April to June, the mean jet position migrates northward, from a position an
 %  ACKNOWLEDGMENTS
 
 \begin{acknowledgments}
-APHRODITE is... 
+APHRODITE is... We thank grants number  ... 
 \end{acknowledgments}
 
 %% ------------------------------------------------------------------------ %%
@@ -377,16 +379,69 @@ APHRODITE is...
 % Table titles go above tables; all other caption information
 %  should be placed in footnotes below the table.
 %
-%----------------
-% EXAMPLE FIGURE
-%
 
-%FIGURE 1 - Hovmoller diagram of Meiyu latitude occupancy, 1951-2007
+
+%%%% FIGURE 1 - Hovmoller diagram of Meiyu latitude occupancy, 1951-2007
 \begin{figure}
 \noindent\includegraphics[width=36pc]{fig1_dingchan.pdf}
 \caption{Climatology of the Meiyu Front, 1951-2007. 1) Pre-Meiyu 2) Meiyu 3) Cyclone season in Southern China 4) Storms advected by summer jet}
 \label{figure_label}
 \end{figure}
+
+
+%%%% TABLE 1 - MEIYU STATISTICS %%%%
+
+\begin{table}
+\caption{Frequency of primary and secondary fronts, as well as latitude and intensity during the Spring rains, pre-Meiyu, Meiyu season, post-Meiyu, and for the full year. These variables are calculated over the years 1951-2007, 1951-1979 and 1980-2007. Statistically significant differences between 1951-1979 and 1980-2007 at the 95\%/99\% level are indicated by bold/bold and italic, as calculated by a permutation method and a bootstrapping method described in the main text.}
+\centering
+
+\begin{tabular}{ l c c c c}
+	 \multicolumn{5}{c}{\textbf{1951-2007}} \\
+	 \textbf{Time Period} & \textbf{1ff.} (\%) &\textbf{2ff.} (\%) & \textbf{Lat} & \textbf{Int} (mm day$^{-1}$) \\
+	 \hline
+	\textbf{Spring} (81-120) & $50.9 \pm 1.0$ & $1.0 \pm 0.2$ & $27.2$ & 21.1 \\
+	\textbf{Pre-Meiyu} (121-155) & $56.5 \pm 1.1$ & $3.7 \pm 0.4$ & $27.0$ & 25.8 \\
+	\textbf{Meiyu I} (156-180) &	$65.2 \pm 1.3$ & $6.2 \pm 0.6$ & $27.7$ & 30.0 \\
+	\textbf{Meiyu II} (181-200) & $63.2 \pm 1.4$ & $10.3 \pm 0.9$ & $31.0$ & 28.5 \\
+	\textbf{Meiyu} (156-200) & $64.3 \pm 0.9$ & $8.1 \pm 0.5$ & $29.1$ & 29.3 \\
+	\textbf{Post-Meiyu} (201-270) & $42.7 \pm 0.8 $ & $8.7 \pm 0.4$ & $29.6$ & 26.8 \\
+	\textbf{Whole Year} (1-365) & $38.4 \pm 0.3$ & $3.3 \pm 0.1$ & $28.3$ & 23.8 \\
+\end{tabular}
+
+\begin{tabular}{ l c c c c c c}
+	& \multicolumn{3}{c}{\textbf{1951-1979}} & \multicolumn{3}{c}{\textbf{1980-2007}} \\
+	\textbf{Period} & 1\% & 2\% & L & 1\% & 2\% & L \\
+	\hline	
+	\textbf{Spring} (81-120) & $50.6 \pm 1.5$ & $1.0 \pm 0.3$ & $\boldsymbol{27.4 \pm .2^*}$ & $51.2 \pm 1.5$ & $1.1 \pm 0.3$ & $\boldsymbol{27.0 \pm 0.2^*}$ \\
+	\textbf{Pre-Meiyu} (121-155) & $\boldsymbol{60.7 \pm 1.5^*}$ & $3.8 \pm 0.6$ & $27.1 \pm .2$ & $\boldsymbol{52.2 \pm 1.6^*}$ & $3.6 \pm 0.6$ & $26.9 \pm 0.3$ \\
+	\textbf{Meiyu I} (156-180) &	$65.7 \pm 1.8$ & $5.8 \pm 0.9$ & $27.6 \pm .3$ & $64.7 \pm 1.8$  & $6.7 \pm 0.9$ & 6$ 27.9 \pm 0.3$ \\
+	\textbf{Meiyu II} (181-200) & $63.4 \pm 2.0$ & $9.3 \pm 1.2$ & $31.1 \pm .4$ & $63.0 \pm 2.0$ & $11.4 \pm 1.3$ & $30.7 \pm 0.3$ \\
+	\textbf{Meiyu} (156-200) & $64.7 \pm 7.4$ & $0.7 \pm 0.7$ & $29.2 \pm .3$ & $64.0 \pm 1.4$ & $8.8 \pm .8$ & $29.1 \pm 0.3$ \\
+	\textbf{Post-Meiyu} (201-270) & $43.0 \pm 1.1 $ & $9.4 \pm 0.6$ & $\boldsymbol{29.9 \pm .3}$ & $42.2 \pm 1.1$ & $8.0 \pm 0.6$ & $\boldsymbol{29.3 \pm 0.4}$  \\
+	\textbf{Whole Year} (1-365) & $38.6 \pm 0.5 $ & $3.4 \pm 0.2 $ & $\boldsymbol{28.4 \pm .1}$ & $38.1 \pm 0.5$ & $3.3 \pm 0.2$ & $\boldsymbol{28.2 \pm 0.1} $ \\
+\end{tabular}
+
+\begin{tabular}{ l c c c c c c c c}
+	& \multicolumn{3}{c}{\textbf{1951-1979}} & \multicolumn{3}{c}{\textbf{1980-2007}} \\
+	\textbf{Period} & 1\% & 2\% & L & I & 1\% & 2\% & L & I \\
+	\hline	
+	\textbf{Spring} (81-120) & $50.6 \pm 1.5$ & $1.0 \pm 0.3$ & $\boldsymbol{27.4 \pm .2^*}$ & $20.8 \pm .7$ & $51.2 \pm 1.5$ & $1.1 \pm 0.3$ & $\boldsymbol{27.0 \pm 0.2^*}$ & $21.4 \pm .7$ \\
+	\textbf{Pre-Meiyu} (121-155) & $\boldsymbol{60.7 \pm 1.5^*}$ & $3.8 \pm 0.6$ & $27.1 \pm .2$ & $25.6 \pm .8$ & $\boldsymbol{52.2 \pm 1.6^*}$ & $3.6 \pm 0.6$ & $26.9 \pm 0.3$ & $26.0 \pm .8$\\
+	\textbf{Meiyu I} (156-180) &	$65.7 \pm 1.8$ & $5.8 \pm 0.9$ & $27.6 \pm .3$ & $30.2 \pm 1.0$ & $64.7 \pm 1.8$  & $6.7 \pm 0.9$ & 6$ 27.9 \pm 0.3$ & $29.8 \pm 1.0$ \\
+	\textbf{Meiyu II} (181-200) & $63.4 \pm 2.0$ & $9.3 \pm 1.2$ & $31.1 \pm .4$ & $27.9 \pm 1.1$ & $63.0 \pm 2.0$ & $11.4 \pm 1.3$ & $30.7 \pm 0.3$ & $29.1 \pm 1.1$ \\
+	\textbf{Meiyu} (156-200) & $64.7 \pm 7.4$ & $0.7 \pm 0.7$ & $29.2 \pm .3$ & $29.2 \pm .7$ & $64.0 \pm 1.4$ & $8.8 \pm .8$ & $29.1 \pm 0.3$ & $29.5 \pm .8$\\
+	\textbf{Post-Meiyu} (201-270) & $43.0 \pm 1.1 $ & $9.4 \pm 0.6$ & $\boldsymbol{29.9 \pm .3}$ & $26.7 \pm .8$ & $42.2 \pm 1.1$ & $8.0 \pm 0.6$ & $\boldsymbol{29.3 \pm 0.4}$ &  $26.8 \pm .8$ \\
+	\textbf{Whole Year} (1-365) & $38.6 \pm 0.5 $ & $3.4 \pm 0.2 $ & $\boldsymbol{28.4 \pm .1}$ & $23.7 \pm .3$ & $38.1 \pm 0.5$ & $3.3 \pm 0.2$ & $\boldsymbol{28.2 \pm 0.1} $ & $24.0 \pm .3$\\
+\end{tabular}
+
+%\begin{tabularx}{.9\textwidth}{ >{\setlength\hsize{.075X@{}\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} >{\setlength\hsize{.075\hsize}\centering}X@{} }
+%\hline
+ %\multicolumn{4}{>{\setlength\hsize{.3\hsize}\centering } X}{1951-2007}  &  \multicolumn{4}{>{\setlength\hsize{.3\hsize}\centering } X}{1951-1979} \multicolumn{4}{>{\setlength\hsize{.3\hsize}\centering } X}{1980-2007}  \tabularnewline
+%\end{tabularx}
+\end{table}
+
+
+
 
 \end{document}
 
@@ -451,81 +506,8 @@ More Information and Advice:
 % \item
 % \end{enumerate}
 %
-%% ------------------------------------------------------------------------ %%
-%
-%  EQUATIONS
-%
-%% ------------------------------------------------------------------------ %%
-
-% Single-line equations are centered.
-% Equation arrays will appear left-aligned.
-
-Math coded inside display math mode \[ ...\]
- will not be numbered, e.g.,:
- \[ x^2=y^2 + z^2\]
-
- Math coded inside \begin{equation} and \end{equation} will
- be automatically numbered, e.g.,:
- \begin{equation}
- x^2=y^2 + z^2
- \end{equation}
-
-% IF YOU HAVE MULTI-LINE EQUATIONS, PLEASE
-% BREAK THE EQUATIONS INTO TWO OR MORE LINES
-% OF SINGLE COLUMN WIDTH (20 pc, 8.3 cm)
-% using double backslashes (\\).
-
-% To create multiline equations, use the
-% \begin{eqnarray} and \end{eqnarray} environment
-% as demonstrated below.
-\begin{eqnarray}
-  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
-        && + (y - y_{0}) \sin \Theta  \nonumber \\
-  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
-        && + (y - y_{0}) \cos \Theta.
-\end{eqnarray}
-
-%If you don't want an equation number, use the star form:
-%\begin{eqnarray*}...\end{eqnarray*}
-
-% Break each line at a sign of operation
-% (+, -, etc.) if possible, with the sign of operation
-% on the new line.
-
-% Indent second and subsequent lines to align with
-% the first character following the equal sign on the
-% first line.
-
-% Use an \hspace{} command to insert horizontal space
-% into your equation if necessary. Place an appropriate
-% unit of measure between the curly braces, e.g.
-% \hspace{1in}; you may have to experiment to achieve
-% the correct amount of space.
 
 
-%% ------------------------------------------------------------------------ %%
-%
-%  EQUATION NUMBERING: COUNTER
-%
-%% ------------------------------------------------------------------------ %%
-
-% You may change equation numbering by resetting
-% the equation counter or by explicitly numbering
-% an equation.
-
-% To explicitly number an equation, type \eqnum{}
-% (with the desired number between the brackets)
-% after the \begin{equation} or \begin{eqnarray}
-% command.  The \eqnum{} command will affect only
-% the equation it appears with; LaTeX will number
-% any equations appearing later in the manuscript
-% according to the equation counter.
-%
-
-% If you have a multiline equation that needs only
-% one equation number, use a \nonumber command in
-% front of the double backslashes (\\) as shown in
-% the multiline equation above.
 
 %% ------------------------------------------------------------------------ %%
 %
