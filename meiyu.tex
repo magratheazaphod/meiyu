@@ -65,6 +65,9 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{bm}
+\usepackage{CJKutf8}  %allows insertion of Chinese characters
+\AtBeginDvi{\input{zhwinfonts}}
+
 \linenumbers*[1]
 
 %  To add line numbers to lines with equations:
@@ -166,22 +169,19 @@ A growing body of literature claims a change in summer rainfall distribution ove
 
 \section{Introduction}
  
- China receives about 60\% of its rainfall from May to August, known collectively as the East Asian summer monsoon. The period of peak rainfall within this monsoon features a northward-migrating front known as the Meiyu front (lit. ``Plum rains''  -- capitalize front?), and lasts roughly from early June to mid-July (``Meiyu Season''). A growing volume of evidence suggests a shift in mean rainfall patterns over China beginning in the late 1970s, with increased flooding in the south and droughts in the north (the ``South Flood North Drought''). A permanent change would have major humanitarian impacts on the densely-populated eastern Chinese plain, where a sizable fraction of the population depends on agriculture. The Chinese government has already embarked on a costly engineering project to reroute water from the Yangtze to the Yellow River, the South-North Water Transfer Project.
+ China receives about 60\% of its rainfall from May to August, known collectively as the East Asian summer monsoon. The period of peak rainfall within this monsoon features a northward-migrating front known as the Meiyu front (lit. ``Plum rains''), and lasts roughly from early June to mid-July (``Meiyu Season''). A growing volume of evidence suggests a shift in mean rainfall patterns over China beginning in the late 1970s, with increased flooding in the south and droughts in the north (the ``South Flood North Drought'') \citep{Hu1997,Gong2002}. A permanent change would have major humanitarian impacts on the densely-populated eastern Chinese plain, where a sizable fraction of the population depends on agriculture. Northern China suffers from substantial depletion of freshwater resources along with increasing demand \citep{Currell2012,Gleeson2012}. The Chinese government has already embarked on a project to reroute water from the Yangtze River to northern China, the South-North Water Transfer Project (\textit{nanshui beidiao gongcheng}), expected to become the most expensive hydraulic engineering project ever undertaken and with massive human and environmental impact \citep{Magee2011}.
  
-	The complex atmospheric dynamics of the East Asian summer monsoon remain a source of debate \citep{Sampe2010,Chen2014}. The behavior of the Meiyu front has been discussed in the seasonal mean\citep{Ding2005}, and in relation to interannual rainfall variability \citep{Kosaka2011}. However, to our knowledge, no comprehensive statistics of daily Meiyu behavior exist. We have developed an algorithm to compile a 57-year climatology (1951-2007) of frontal events in China (hereafter referred to as Meiyu events) based on the APHRODITE rain gauge product. In addition, we test the covariance of daily Meiyu behavior with that of the tropospheric jet, using an existing database from \citet{Schiemann2009}. Past work has compared jet and Meiyu variability over shorter time periods or with coarse resolution\cite{Liang1998}, but none has systematically compared the two.  Finally, given our daily Meiyu climatology, we determine whether there are apparent changes in behavior over the 57 years, and whether these also correspond to changes in jet behavior.
+	The dynamics of the climatology of East Asian summer monsoon remain a source of debate \citep{Sampe2010,Chen2014}. The Meiyu front has mostly been discussed in the seasonal mean\citep{Ding2005}. Extensive work links anomalies in the latitude of the Meiyu front to rainfall anomalies\citep{Kosaka2011}. However, to our knowledge, no comprehensive statistics of daily Meiyu behavior exist. We have developed an algorithm to compile a 57-year climatology (1951-2007) of frontal events in China (hereafter referred to as Meiyu events) based on the APHRODITE rain gauge product. To our knowledge, the South Flood-North Drought has not been described in terms of changes in the behavior of the Meiyu Front. The objective statistics of frontal characteristics from our new database allow for such an analysis.
+	
+	The tropospheric jet is known to dictate the timing of rainfall in the East Asian. In winter, the strength of the tropospheric jet controls the strength of the East Asian winter monsoon circulation, and contributes a greater fraction of variability than ENSO \citep{Yang2002}. In summer, the initiation of the rainy Meiyu season depends on the passage of the jet north of the Tibetan Plateau (CITATIONS). We seek to explain the statistical changes in Meiyu behavior in terms of corresponding changes in the tropospheric jet. Therefore, we compare our database with an existing data set of jet counts described in \citet{Schiemann2009}. Past work has compared jet and Meiyu variability over shorter time periods or with coarse resolution \citep{Liang1998}, but none has systematically compared the two. The statistically significant changes found in Meiyu behavior are in each case also attributable to jet shifts.
 
-%consider adding a sentence in the previous paragraph that explains why the jet should be related to Meiyu behavior - existing simple reference?
-%Current theory suggests that the tropospheric jet plays a major role in Meiyu formation, either by zonal advection of sensible heat from the Tibetan Plateau upwind \citep{Sampe2010}, or as part of the orographically forced circulation that produces meridional wind convergence over China\citep{Chen2014}.
-
-% Paper may be short enough that it is unnecessary to delineate what each section contains.
 %	In the following text we seek to achieve the following objectives: 1) Define an objective climatology of the Meiyu front; 2) Show the positions of the tropospheric jet associated with different configurations of the tropospheric jet; 3) Show that the Meiyu front and tropospheric jet covary on a daily scale; and 4) Suggest a dynamic lens to understand the observed climatology of Meiyu front and jet.
 	
 \section{Data sets}
+
 	The analysis contained in this paper relies on two data sets, APHRODITE and Schiemann et al's database of jet counts. APHRODITE (Asian Precipitation - Highly-Resolved Observational Data Integration Towards Evaluation of the Water Resources) \citep{Yatagai2012}. The APHRO\_MA\_V1101 product includes 57 years (1951-2007) of daily precipitation (PRECIP product, units mm day$^{-1}$) and station coverage (RSTN product) on a .25\textdegree\ $\times$ .25\textdegree\ grid (roughly 25 km spacing) between 60\textdegree E-150\textdegree E and 15\textdegree S-55\textdegree N. We focus on the subregion from 100E-123E and 20N-40N as the area of occurrence of Meiyu events. Rain gauge products present an analytical challenge because the distribution of stations is uneven in space and changes with time. Station density over eastern China improves beginning in the 1970s from X to Y (INSERT ACTUAL NUMBERS). However, the spacing of stations generally does not exceed 100 km, which should be more than sufficient to resolve the macroscopic scale of a frontal event.
 
 	For tropospheric jet variability, we employ a database based on ERA-40 reanalysis data developed by \citet{Schiemann2009}. Their database includes every appearance of a tropospheric jet in East Asia for 1958-2001 at 6-hourly intervals using simple criteria: Positive zonal wind and local maximum in excess of 30 m/s. We have modified Schiemann et al.'s algorithm in several respects: ...
-
-.
 	
 \section{Meiyu Climatology}
 \subsection{Algorithm}
@@ -241,12 +241,12 @@ In some cases, a fit will be achieved, but its quality will be too poor to inclu
 
 	Figure 1a reproduces a plot similar to Ding and Chan's 200x paper, but focusing on eastern China. China receives a substantial fraction of its yearly precipitation outside of summer, unlike a traditional monsoon circulation. Figure 1b shows a H\"ovmoller diagram of the latitudes occupied by the Meiyu Front over all 57 years, including both primary and secondary events, with a 5-day and 2\textdegree smoothing. Frontal events are found throughout the year, with occurrence minimizing in January (10\%) and maximizing in late June (80\%). However, it can be seen that mean rainfall and Meiyu occurrence are not entirely equivalent. For instance, the August peak in southern China rainfall (about 20\textdegree N) does not correspond to a surge in Meiyu events. Other known features of East Asian rainfall are reproduced, such as the spring persistent rains beginning in March.
 	
+	Four distinct periods of frontal behavior can be isolated from Figure 1: 1) A "Pre-Meiyu" from May 1-June 5 (days 121-155) over southern China (Ding and Chan's first position), when front frequency and intensity increase; 2) Meiyu Season, the period during June 1-July 15 (Ding and Chan stage 2, days 156-200) characterized by a 4 degree shift in mean front latitude within 20 days; 3) A "Post-Meiyu" wherein double front structures are commonly (Ding and Chan stage 3). It can be seen that frontal activity persists both in spring (days 81-120) and in fall (271-300), but with decreased frequency and intensity. . Figure 2 shows that even in winter, rainfall events in China tend to be frontal, but their frequency increases significantly \% during Meiyu Season, and a surge in intensity can be seen around June 1 where mean rainfall along the front exceeds 25 mm/day. The mean tilt of the front is approximately 8 degrees.
+	
 	As pointed out in \citet{Biasutti2011}, the statistics of rainfall incurrence are dependent on the sampling interval. The intensity of storms likely remains relatively fixed, whereas their frequency increases significantly. This view is confirmed by decades of observation studies such as\citet{Murakami1984}, which find that frontal rainfall consists of a string of mesoscale convective systems (MCS) separated by calm skies.
 	
 	We focus on several periods of particular behavior:. These correspond to Ding and Chan's ... Table 1 shows the mean characteristics of fronts in each of these periods and their variance.
 	
-	%the following were my observations from the previous version of Figure 1 - may no longer be accurate, but saving them just in case.
-	%Four local maxima of Meiyu events can be observed: 1) A "pre-Meiyu" from May 1-31 over southern China (Ding and Chan's first position); 2) Meiyu Season, in which the preferred latitude of the front shifts by almost ten degrees from June 1-July 15 (Ding and Chan stage 2); 3) A "post-Meiyu" of persistent  4) Cyclone season over Southern China. The storms during season 4 can be distinguished from earlier Meiyu events in southern China because their propagation direction is westward, opposite to eastward Meiyu storms. The combination of stages 3 and 4 corresponds to the third stage of the Meiyu in Ding and Chan, but only the core of Meiyu season (their stage 2) features significant front migration. Figure 2 shows that even in winter, rainfall events in China tend to be frontal, but their frequency increases up to almost 100\% during Meiyu Season, and a surge in intensity can be seen around June 1 where mean rainfall along the front exceeds 25 mm/day. The mean tilt of the front is approximately 8 degrees.
 	
 	We test for the existence of statistically significant differences between 1951-1979 and 1980-2007 for each of the time periods mentioned above.
 	
@@ -257,22 +257,13 @@ Past work has noted the relationship between the subtropical westerly jet and pr
 
 Our aim is to investigate the relationship between the position of the subtropical westerly jet in eastern China and Meiyu activity. \citep{Schiemann2009} constructed a data set of jet occurrences in the Tibetan Plateau region from the ERA-40 reanalysis.  For a given longitude, a jet `count'  is defined as a local maximum in the horizontal wind field with magnitude greater than $30$ m s$^{-1}$; further details can be found in section 2 of \citep{Schiemann2009}. Since we are interested in the relationship between jet latitude and Meiyu front activity, we only consider the set of this data in the longitude band $90-130^\circ$E, which encompasses the region of Meiyu front activity. We aggregate the jet counts to produce the average daily jet latitude across this across the longitude band for the entire period of the ERA-40 reanalysis, 1958-2001. 
 
-%snippet
-%A new paleoclimate study proposes the tropospheric jet as an indicator of past rainfall patterns in China \citep{Nagashima2011}\citep{Nagashima2013}. The authors study a marine sediment core in the Sea of Japan, downstream from both the Taklamakan Desert and Gobi Desert, and are able to differentiate between dust from each of these sources using electron spin resonance (ESR) and grain size. In the present day, Gobi Desert dust is only advected during spring before the tropospheric jet passes north of the Tibetan Plateau and \citep{Roe2009}, whereas the mechanism of transport of Taklamakan Desert dust remains active in summer when the jet occupies a low variability position on the northern flank of the Tibetan Plateau. Therefore, they attribute increases in Gobi Desert dust to longer springs and shorter summers. Since Holocene changes in precipitation match the timing of abrupt changes in their record, they therefore conclude that the tropospheric jet controls precipitation variability over millennial time scales.
-
 %-> The westerly jet and rainfall are argued to covary on paleoclimate timescales \citep{Nagashima2011}\citep{Nagashima2013}.
 	
 %	Monthly changes in the position of the jet have previously been reported in \citet{Schiemann2009}, and we do not repeat them here. 
+
 %	It is worth noting that the pre-Meiyu in May corresponds to a time of great jet variability, whereas June features a discernible but meandering jet, and the post-Meiyu corresponds to very low variability in jet position during July and August.
 
-	
-%		Finally, we use our knowledge of daily Meiyu positions to isolate preferred configurations for different dates, as well as probability distributions of the tropospheric jet associated with each configuration. If a robust change in mean jet progression is detected, we may be able to isolate a corresponding shift in Meiyu distribution that may have previously gone unnoticed due to extreme temporal variability in the data.
-		
-%		We first attempt to define a transition date from spring to summer behavior in the jet database, and equivalently from Meiyu Season to post-Meiyu in our new catalog. Preliminary evidence suggests a long-term perturbation in mean jet path in East Asia from the 1960s to present with later onset of summer jet and shorter total duration of summer jet. 
-
 From April to June, the mean jet position migrates northward, from a position anchored to the southern flank of the Tibetan Plateau to a position on the northward flank. During this transition period, the Meiyu front occurs in eastern China. In this section we show that the jet latitude covaries with the latitude of Meiyu events, and that we observe changes in the jet transition behavior corresponding to changes in Meiyu activity demonstrated above. 
-
-
 
 \begin{figure}[htbp]
 \begin{center}
@@ -284,81 +275,28 @@ From April to June, the mean jet position migrates northward, from a position an
 
 (describe figure \ref{jet_seasonal} here) 
 
-	
-% which more interesting - chronological jet or position related? try both?
-
-%chronological
-%jet corresponding to chronology
-%pre-meiyu - may 1-31
-%meiyu - june 1-july15/20
-%post-meiyu - july 21 - sep something
-
-%ask jake to check - but also analogous to Schiemann, so don't need to repeat here.
-%changes in jet role? wobbly jet to north corresponds to pre-Meiyu
-%focused jet -> intensified Meiyu?
-
-%based on Meiyu position
-
-%give Jake 9 sets of dates - 23N, 27N and 31N (105E or 115E) and with no Q cutoff, Q>.6 or Q>.8
-%should be restricted to june 1-july 15/20 (time of meandering front)
-%importance - makes the point that jet controls Meiyu location
-
-%idea based on Jake's suggestion - date of access of different regions based on when cumulative precip amount reaches some values
-	
-\section{Covariance of jet and Meiyu anomalies}
-
-%Need jet anomaly database and Meiyu anomaly database - show that they covary. Also an easy way to check whether mean positions have changed with time.
-	
 \section{Dynamics}
 
 	The covariance of Meiyu front positions and tropospheric jet latitudes previously demonstrated also clarifies a dynamical reason for their seasonality. As shown, Meiyu season consists of intense rainfall from June 1st to July 1st with a shift in latitude of almost 10 degrees over the course of that month. After  In the climatological mean, \cite{Chen2014} demonstrated that the Meiyu front exists primarily due to forced mechanical convergence by the Tibetan Plateau upstream. The season of peak rainfall and peak Meiyu frequency corresponds directly to the period when the westerly jet is impinging on the Tibetan Plateau upstream. When the jet moves further north to its preferred summer position, which occurs just north of the Tibetan Plateau, it is no longer deflected and the front is significantly weaker, and we transition to a preferred double-front state as seen in figure 1b. 
-	
-	%as discussed with Jake, probably not necessary to this argument, although still interesting...
-	%We confirm this hypothesis by showing the climatology of precipitable water vapor from SSRI from time A, time B, time C and time D (last figure). During the early and late stages of Meiyu season precipitable water content is concentrated along bands that intersect central China. However, in July and August, the latitude of the moisture vapor front has shifted much further north, over northern China, and both the Bay of Bohai and the Korean Peninsula and Japan all have much greater precipitable water. However, the lack of mechanical forcing is shown by the weakness of rainfall in those events (\textless 20 mm/day versus 25-30 mm/day over southern and central China during Meiyu season.
+
+\section{Comparison to previous work/A secondary shift: 1979-1993 v 1994-2007}
+
+	The onset of the May pre-Meiyu season is referred to in other literature as the South China Sea monsoon onset, since rainfall primarily occurs at the latitude of the South China Sea during that month. Other authors have also found a late 1970s change in pre-Meiyu rainfall\citep{Wang2009}. In addition, authors have reported an earlier onset of the pre-Meiyu season over the period 1994-2008 relative to 1979-1993\citep{Kajikawa2012}, and other changes such as an increase in rainfall over southeastern China and an increase in the passage of tropical cyclones\citep{Kwon2007}. The significance of this shift can be immediately tested using our Meiyu database. This latter shift is ... (INSERT QUICK RESULTS).
 
 \section{Conclusion}
- Since the behavior of the jet is coupled to global climate variability, our work holds the promise of attributing the regional rainfall trend in China to global-scale change.
 
-%Snippet - either throw out entirely, or reduce to one sentence
-%Regional prediction of climate change under global warming presents greater difficulty than global projection. In the 5th edition of the IPCC report, the CMIP 5 model suite does not come to a consensus on the sign of future summer rainfall changes in East Asia (ADD CITATION). Several authors have proposed templates for regional mechanisms resulting from CO2 forcing. Radiative constraints on precipitation allow the separation of two terms, global mean response and local circulation effects\citep{Muller2011}. The``rich get richer'' mechanism anticipates increased rainfall in regions of net precipitation and decreases in regions of net evaporation due to amplified moisture transport\citep{Held2006}. \citet{Lintner2007} and \citet{Chou2009} proposed a more comprehensive set of phenomena based on model projection of changes in convective regions. These include not only the``rich get richer'' but also the ``upped ante'' mechanism, wherein convective margins see droughts because increased humidity in convective regions raises the threshold for convection and moisture gradients are stronger. This framework has been used to understand ENSO-related rainfall variability in South America. However, it is difficult to apply these existing theories to a region with high spatial and temporal heterogeneity such as East Asia.
--> Existing templates for precipitation changes under warming (\citep{Held2006}\citep{Lintner2007}\citep{Chou2009}) are not easily applied to the East Asian monsoon
+We have created a 57-year climatology of frontal rainfall over China including information such as frequency of rainfall, latitude, intensity, tilt, width and length. No prior study has categorically analyzed such an extent of data. Furthermore, we have isolated two statistically robust changes that occur between the years 1951-1979 and 1980-2007: 1) A decrease in the frequency of frontal events during the pre-Meiyu season (days 121-155, or May 1-June 5), significant at $p < .0002$; 2) A southward shift in front latitude during the post-Meiyu (days 201-270, or July 20-Sep 30), significant at a 95\% confidence level. Each of these is associated also with a statistically significant change in jet latitude between the two time periods. Other work has tied the rainfall changes of the South Flood-North Drought to alterations in atmospheric and ocean fields such as geopotential height, the extent of the West Pacific Subtropical High, and the mean state of Pacific Ocean SST and ENSO\citep{Chang2000}. To our knowledge, no previous study has found a statistically significant jet shift coordinated with changes in Meiyu behavior.
+
+In the global mean, observations show that the tropospheric jet is shifting poleward, in tandem with mid-latitude tropospheric heating, an increase in subtropical static stability, a northward shift in mean ITCZ latitude and the expansion of the Hadley circulation \citep{Fu2006,Archer2008}. Furthermore, this trend is found to continue under \nth{21} century global warming in models\citep{Lu2007,Kang2012}. This contradicts our finding at the regional level that the jet has generally shifted southward over East Asia. However, recent work finds that changes in tropical Pacific convection and SST lead to meridional displacement of the tropospheric jet across the entire tropical Pacific\citep{Park2014a}. Preferential heating of the eastern Pacific warm pool under global warming leads to a southward shift of the Pacific jet in both the CMIP 3 and CMIP 5 model suites \citep{Park2014}. Thus, the observed southward shift of the jet in China over the end of the \nth{20} is compatible with the global trend of poleward jet translation.
+
+The relation of regional climate change under a \nth{21} century warming regime to global mean change is unclear. In the 5th edition of the IPCC report, the CMIP 5 model suite does not come to a consensus on the sign of future summer rainfall changes in East Asia\citep{Christensen2011}. Energetic constraints on precipitation allow for the separate consideration of global mean response and local circulation feedback \citep{Muller2011}. Several authors have proposed templates for regional mechanisms of change such as the ``rich get richer'' and ``upped ante'' criteria \citep{Held2006,Lintner2007,Chou2009}, but these are not obviously applicable to the East Asian monsoon. Since the behavior of the jet is coupled to global climate variability, our work holds the promise of attributing the regional rainfall trend in China to global-scale change.
 
 
-%%% End of body of article:
-%  ACKNOWLEDGMENTS
+%%%  ACKNOWLEDGMENTS
 
 \begin{acknowledgments}
-APHRODITE is... We thank grants number  ... 
+This work was supported by NSF funds EAR-0909195 and EAR-1211925. We also acknowledge NSFC (National Natural Science Foundation of China) grant \#40921120406 for enabling our collaboration with Professor Yanjun Cai of IEECAS in Xi'an, which prompted the present work. We thank Reinhardt Schiemann for sharing his database of jet counts. APHRODITE precipitation data is publicly available at http://www.chikyu.ac.jp/precip/index.html. FERRET, a NOAA product, was used for data analysis and preliminary plot generation.
 \end{acknowledgments}
-
-%% ------------------------------------------------------------------------ %%
-%%  REFERENCE LIST AND TEXT CITATIONS
-%
-% Either type in your references using
-% \begin{thebibliography}{}
-% \bibitem{}
-% Text
-% \end{thebibliography}
-%
-% Or,
-%
-% If you use BiBTeX for your references, please use the agufull08.bst file (available at % ftp://ftp.agu.org/journals/latex/journals/Manuscript-Preparation/) to produce your .bbl
-% file and copy the contents into your paper here.
-%
-% Follow these steps:
-% 1. Run LaTeX on your LaTeX file.
-%
-% 2. Make sure the bibliography style appears as \bibliographystyle{agufull08}. Run BiBTeX on your LaTeX
-% file.
-%
-% 3. Open the new .bbl file containing the reference list and
-%   copy all the contents into your LaTeX file here.
-%
-% 4. Comment out the old \bibliographystyle and \bibliography commands.
-%
-% 5. Run LaTeX on your new file before submitting.
-%
-% AGU does not want a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
 
 \bibliographystyle{agufull08}
 \bibliography{meiyu}
@@ -440,14 +378,7 @@ APHRODITE is... We thank grants number  ...
 %\end{tabularx}
 \end{table}
 
-
-
-
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-More Information and Advice:
 
 %% ------------------------------------------------------------------------ %%
 %
