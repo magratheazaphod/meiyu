@@ -66,6 +66,7 @@
 \usepackage{multirow}
 \usepackage{bm}
 \usepackage{CJKutf8}  %allows insertion of Chinese characters
+\usepackage{color} 
 \AtBeginDvi{\input{zhwinfonts}}
 
 \linenumbers*[1]
@@ -159,6 +160,10 @@ Weihan Liu\altaffilmark{1}}
 %Needs to be 150 words or less - currently at 179.
 \begin{abstract}
 A growing body of literature claims a change in summer rainfall distribution over China after the late 1970s (the ``South Flood North Drought''). In these months, rainfall characteristically occurs along zonal bands with a meridional tilt (the Meiyu Front). We construct a novel database that tracks all occurrences of frontal rainfall over China on each day from 1951 to 2007 from APHRODITE rain gauge data, and reports their latitude, strength, tilt and width. An unprecedented Meiyu climatology is obtained. In addition, the latitude of frontal events is known to correspond to the position of the tropospheric jet. Therefore, we search for correspondence between front and jet position, and coupled changes in behavior with time. Two robust changes are observed in front behavior between the time periods 1951-1979 and 1980-2007: 1) A significant decrease in the frequency of pre-Meiyu (May) frontal events after 1979 and 2) a southward shift in late season Meiyu events (mid-July to August) found both in the front and jet databases. Our results hold the promise of coupling regional climate change to \nth{21} century global change.
+
+%2 claims:
+% 1. South-flood, north-drought pattern is a change in location and frequency of Meiyu events
+% 2. These changes in the meiyu are reflected in jet changes (i.e. they are driven by planetary scale things) 
 \end{abstract}
 
 \begin{article}
@@ -239,9 +244,9 @@ In some cases, a fit will be achieved, but its quality will be too poor to inclu
 	
 \subsection{Statistics}	
 
-	Figure 1a reproduces a plot similar to Ding and Chan's 200x paper, but focusing on eastern China. China receives a substantial fraction of its yearly precipitation outside of summer, unlike a traditional monsoon circulation. Figure 1b shows a H\"ovmoller diagram of the latitudes occupied by the Meiyu Front over all 57 years, including both primary and secondary events, with a 5-day and 2\textdegree smoothing. Frontal events are found throughout the year, with occurrence minimizing in January (10\%) and maximizing in late June (80\%). However, it can be seen that mean rainfall and Meiyu occurrence are not entirely equivalent. For instance, the August peak in southern China rainfall (about 20\textdegree N) does not correspond to a surge in Meiyu events. Other known features of East Asian rainfall are reproduced, such as the spring persistent rains beginning in March.
+	Figure \ref{dingchan}a reproduces a plot similar to Ding and Chan's 2005 paper, but focusing on eastern China. China receives a substantial fraction of its yearly precipitation outside of summer, unlike a traditional monsoon circulation. Figure \ref{dingchan}b shows a H\"ovmoller diagram of the latitudes occupied by the Meiyu Front over all 57 years, including both primary and secondary events, with a 5-day and 2\textdegree smoothing. Frontal events are found throughout the year, with occurrence minimizing in January (10\%) and maximizing in late June (80\%). However, it can be seen that mean rainfall and Meiyu occurrence are not entirely equivalent. For instance, the August peak in southern China rainfall (about 20\textdegree N) does not correspond to a surge in Meiyu events. Other known features of East Asian rainfall are reproduced, such as the spring persistent rains beginning in March.
 	
-	Four distinct periods of frontal behavior can be isolated from Figure 1: 1) A "Pre-Meiyu" from May 1-June 5 (days 121-155) over southern China (Ding and Chan's first position), when front frequency and intensity increase; 2) Meiyu Season, the period during June 1-July 15 (Ding and Chan stage 2, days 156-200) characterized by a 4 degree shift in mean front latitude within 20 days; 3) A "Post-Meiyu" wherein double front structures are commonly (Ding and Chan stage 3). It can be seen that frontal activity persists both in spring (days 81-120) and in fall (271-300), but with decreased frequency and intensity. . Figure 2 shows that even in winter, rainfall events in China tend to be frontal, but their frequency increases significantly \% during Meiyu Season, and a surge in intensity can be seen around June 1 where mean rainfall along the front exceeds 25 mm/day. The mean tilt of the front is approximately 8 degrees.
+	Four distinct periods of frontal behavior can be isolated from Figure \ref{dingchan}: 1) A "Pre-Meiyu" from May 1-June 5 (days 121-155) over southern China (Ding and Chan's first position), when front frequency and intensity increase; 2) Meiyu Season, the period during June 1-July 15 (Ding and Chan stage 2, days 156-200) characterized by a 4 degree shift in mean front latitude within 20 days; 3) A "Post-Meiyu" wherein double front structures are commonly (Ding and Chan stage 3). It can be seen that frontal activity persists both in spring (days 81-120) and in fall (271-300), but with decreased frequency and intensity. . Figure 2 shows that even in winter, rainfall events in China tend to be frontal, but their frequency increases significantly \% during Meiyu Season, and a surge in intensity can be seen around June 1 where mean rainfall along the front exceeds 25 mm/day. The mean tilt of the front is approximately 8 degrees.
 	
 	As pointed out in \citet{Biasutti2011}, the statistics of rainfall incurrence are dependent on the sampling interval. The intensity of storms likely remains relatively fixed, whereas their frequency increases significantly. This view is confirmed by decades of observation studies such as\citet{Murakami1984}, which find that frontal rainfall consists of a string of mesoscale convective systems (MCS) separated by calm skies.
 	
@@ -265,15 +270,16 @@ Our aim is to investigate the relationship between the position of the subtropic
 
 From April to June, the mean jet position migrates northward, from a position anchored to the southern flank of the Tibetan Plateau to a position on the northward flank. During this transition period, the Meiyu front occurs in eastern China. In this section we show that the jet latitude covaries with the latitude of Meiyu events, and that we observe changes in the jet transition behavior corresponding to changes in Meiyu activity demonstrated above. 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=5in]{Figures/jet_seasonal.pdf}
-\caption{Mean latitude of the westerly jet in the region 90-130$^\circ$E for the 1958-1979 (blue) and 1980-2001 (red). Bootstrapped 95\% confidence intervals are shaded. }
-\label{jet_seasonal}
-\end{center}
-\end{figure}
+%should we add the mean annual cycle somewhere too?
+% might be worth plotting the whole year for the time subsets too. 
 
-(describe figure \ref{jet_seasonal} here) 
+In figure \ref{jet_seasonal}, we show the mean jet latitude from April to October in the region $90-130^\circ$E, averaged over the years 1958-1979 (blue solid line) and 1980-2001 (dashed red line). Bootstrapped 95\% confidence intervals are shaded in blue and red, respectively. The most notable difference between the two time periods is in May, when the jet is at $\approx 41^\circ$N in 1958-1979, while is is almost $2$ degrees further south in 1980-2001. This corresponds to the `pre-Meiyu' period, and the time of the greatest change in Meiyu activity, as shown in Figure xx. In contrast, throughout most of June and July, the mean jet latitude is nearly identical in both time periods, and we see no significant change in Meiyu events. 
+
+{\color{blue} (here include some simple explanation of dynamics and why we might expect jet latitude and storms to covary) }
+
+In the annual mean, the effect of the more southerly position of the jet in May is to reduce the amount of precipitation in northern China, and increase the amount in southern China. This is the pattern of rainfall change observed in the last few decades, and noted by many others \citep[.e.g.][]{Hu1997,Gong2002}. 
+
+
 
 \section{Dynamics}
 
@@ -323,7 +329,15 @@ This work was supported by NSF funds EAR-0909195 and EAR-1211925. We also acknow
 \begin{figure}
 \noindent\includegraphics[width=36pc]{fig1_dingchan.pdf}
 \caption{Climatology of the Meiyu Front, 1951-2007. 1) Pre-Meiyu 2) Meiyu 3) Cyclone season in Southern China 4) Storms advected by summer jet}
-\label{figure_label}
+\label{dingchan}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{Figures/jet_seasonal.pdf}
+\caption{7-day running mean latitude of the westerly jet in the region 90-130$^\circ$E for the 1958-1979 (blue, solid) and 1980-2001 (red, dashed). Bootstrapped 95\% confidence intervals are shaded. }
+\label{jet_seasonal}
+\end{center}
 \end{figure}
 
 
