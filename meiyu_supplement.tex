@@ -1,5 +1,7 @@
 %Supplementary Information for the 2015 submission to Geophysical Research Letters with Jesse Day, Jake Edman, John Chiang, Inez Fung and Weihan Liu
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % AGUtmpl.tex: this template file is for articles formatted with LaTeX2e,
 % Modified November 2013
@@ -50,7 +52,7 @@
 
 \documentclass[draft,grl]{agutexSI}
 
-
+\usepackage{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -207,16 +209,40 @@ Weihan Liu\altaffilmark{3}}
 %\clearpage
 
 %Delete all unused file types below. Copy/paste for multiples of each file type as needed.
-\noindent\textbf{Text S1.}
-%Type or paste text here. This should be additional explanatory text, such as: extended descriptions of results, full details of models, extended lists of acknowledgements etc.  It should not be additional discussion, analysis, interpretation or critique. It should not be an additional scientific experiment or paper.
-%
-%Repeat for any additional Supporting Text
+\noindent\textbf{Front Algorithm}
+The following text contains a full description of the recursively convergent algorithm used to find fronts in daily rainfall over China. The main text contains the end products of the algorithm and the reported products, but the full workings of the algorithm are described below.
 
-%%Enter Data Set, Movie, and Audio captions here
-%%EXAMPLE CAPTIONS
+\begin{enumerate}
+	\item For a given day of accumulated rainfall over the longitudes 105E-123E and 20N-40N at .25\textdegree\ by .25\textdegree\ resolution, the first criterion is to check for a band of coherent rainfall maxima. The maximum daily rainfall at each longitude is found. If there exists a 5\textdegree continuous chain of maxima (20 points in a row) exceeding 10 mm/day, we proceed to step 2 and attempt a fit. Otherwise, there is no front on that day.
+	
+	\item A weighted least-squares linear fit of the \textit{latitudes} of the maxima is attempted, using the intensity of the maxima as weight: 
+	
+	equation...
+	
+	This equation is solved in MATLAB using the backslash operator.
+	
+	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again repeat the weighted linear fit in step 2. $k$ is progressively decreased with each iteration.
+	
+	\item Using our final best estimate from step 3, we define the ``quality score'' $Q$ as the fraction of total daily precipitation that falls within 5 degrees of this fit line.
+	
+	\item As mentioned, we check for a secondary front. We remove all precipitation within the primary front and again apply the front criterion in step 1 to the leftover rainfall map. If passed, steps 2-4 are repeated to find a best estimate for a secondary front.
+	
+	\item If a secondary front is found, two additional quality scores $Q_1$ and $Q_2$ are determined. $Q_1$ is defined as the fraction of rainfall contained in the primary front \textit{after removing all rainfall associated with the secondary front}. Likewise $Q_2$ is the Q score of the second front \textit{after removing all rainfall from the primary front}.		
+	
+\end{enumerate} 
 
-\noindent\textbf{Data Set S1.} %Type or paste caption here.
-%upload your dataset(s) to AGU's journal submission site and select "Supporting Information (SI)" as the file type. Following naming %convention: ds01.
+In some cases, a fit will be achieved, but its quality will be too poor to include in our statistics. To check for this scenario, we use the quality scores $Q$, $Q_1$ and $Q_2$, and the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall that falls on the island of Taiwan. If $TW > 20\%$, the day is thrown out. Such days are dominated by a local storm reaching Taiwan and rarely exhibit a strong front. Subsequently there are two ways a day may be included: 
+	
+\begin{enumerate}
+	\item if $Q>.6$, the day is included in our statistics. If $Q_2$ also is greater than .6, the day will be classified as a double front day.		
+		
+	\item If $Q<.6$, a day can only be included if both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$. In such cases, the quality of fit is initially obscured by the presence of multiple fronts. We classify the day as a double front day.
+\end{enumerate}	
+		
+	In practice, days with secondary fronts constitute a small fraction of all days ($>$ 5\%) but are more common during certain seasons (see Figure \ref{dingchan}c).
+
+\noindent\textbf{Meiyu database}
+We have made the full database of Meiyu statistics from January 1 1951 to December 31 2007 available at the author's personal website: \url{http://www.atmos.berkeley.edu/~jessed/mydata.html}
 
 %Repeat for any additional Supporting data sets
 

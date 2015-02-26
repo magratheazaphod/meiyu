@@ -190,34 +190,7 @@ Summer rainfall characteristically occurs along frontal bands with a meridional 
 	
 \subsection{Meiyu Detection Algorithm}
 
-	For each day from 1 January 1951 to 31 December 2007 (20,819 total), the algorithm determines whether a frontal event is present or not inside the window of 105-123E and 20-40N, and if it exists returns its properties. In addition, it is observed that some days feature two frontal events. If a primary event is detected, the algorithm therefore checks for a secondary fit as well. The algorithm follows the subsequent checklist:
-
-\begin{enumerate}
-	\item The maximum daily rainfall for each longitude is found. If there exists a 5\textdegree continuous chain of maxima (20 points in a row) exceeding 10 mm/day, we proceed to step 2 and attempt a fit. Otherwise, the day is thrown out.
-	
-	\item A weighted least-squares linear fit of the \textit{latitudes} of the maxima is attempted, using the intensity of the maxima as weight.
-	
-	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again repeat the weighted linear fit in step 2. $k$ is progressively decreased with each iteration.
-	
-	\item Using our final best estimate from step 3, we define the ``quality score'' $Q$ as the fraction of total daily precipitation that falls within 5 degrees of this fit line.
-	
-	\item As mentioned, we check for a secondary front. We remove all precipitation within the primary front and again apply the front criterion in step 1 to the leftover rainfall map. If passed, steps 2-4 are repeated to find a best estimate for a secondary front.
-	
-	\item If a secondary front is found, two additional quality scores $Q_1$ and $Q_2$ are determined. $Q_1$ is defined as the fraction of rainfall contained in the primary front \textit{after removing all rainfall associated with the secondary front}. Likewise $Q_2$ is the Q score of the second front \textit{after removing all rainfall from the primary front}.		
-	
-\end{enumerate} 
-	
-In some cases, a fit will be achieved, but its quality will be too poor to include in our statistics. To check for this scenario, we use the quality scores $Q$, $Q_1$ and $Q_2$, and the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall that falls on the island of Taiwan. If $TW > 20\%$, the day is thrown out. Such days are dominated by a local storm reaching Taiwan and rarely exhibit a strong front. Subsequently there are two ways a day may be included: 
-	
-\begin{enumerate}
-	\item if $Q>.6$, the day is included in our statistics. If $Q_2$ also is greater than .6, the day will be classified as a double front day.		
-		
-	\item If $Q<.6$, a day can only be included if both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$. In such cases, the quality of fit is initially obscured by the presence of multiple fronts. We classify the day as a double front day.
-\end{enumerate}	
-
-%I've defined Q1 as the quality of fit after deleting all rainfall associated with the secondary front, and Q2 likewise as the quality of fit after removal of primary front. I am not sure if this is equivalent to checking if the combination of primary and secondary fit explain over 60% of the rainfall - if so, may be a simpler way of describing.
-		
-	In practice, days with secondary fronts constitute a small fraction of all days ($>$ 5\%) but are more common during certain seasons (see Figure \ref{dingchan}c).
+	For each day from 1 January 1951 to 31 December 2007 (20,819 total), a convergent recursive image processing algorithm determines whether a frontal rainfall event exists inside the window of 105-123E and 20-40N. On a given day, rainfall over China must include a continuous chain of rainfall maxima over 5 degrees exceeding 10 mm day$^{-1}$. If one exists, we return properties of the event including the latitude, mean intensity, tilt, length and width, as well as the ``quality score'' $Q$ - what percentage of daily rainfall in China falls within our calculated band. Days that do not meet a minimum $Q$ value of .6 are treated as days without fronts. In addition, we test for the possibility of two frontal events on a single day. The full workings of the algorithm are listed in the supplementary material, along with various instances of its operation.
 
 \subsection{Statistical Significance of Changes in Means}
 
@@ -295,13 +268,14 @@ This work was supported by NSF funds EAR-0909195 and EAR-1211925. We also acknow
 
 %%% Sample figure of algorithm functionality.
 \begin{figure}
-\label{algo}
+\label{climo}
+\noindent\includegraphics[width=36pc]{Figures/climo}
+\caption{Insert caption here.}
 \end{figure}
-%still remaining to be added.
 
 %%% Hovmoller diagram of Meiyu latitude occupancy, 1951-2007. Produced by MATLAB scripts meiyufig1.m and meiyustats_compact.m.
 \begin{figure}
-\noindent\includegraphics[width=36pc]{Figures/fig1_dingchan}
+\noindent\includegraphics[width=36pc]{Figures/meiyu_hovmoller}
 \caption{Hovmoller climatology of East Asian rainfall, 1951-2007, with important time periods marked as follows: 1 - Spring rains; 2 - Pre-Meiyu; 3 - Meiyu; 4 - Post-Meiyu; 5 - Fall rains. a) Precipitation averaged over the longitudes 100-123\textdegree E. b) Probability of occurrence of a front for each day and latitude (both primary and secondary, in percentage), smoothed in time with a 9-day running box filter c) Probability of primary front occurrence and mean intensity (9-day running mean) d) The conditional probability of a secondary front given the presence of a primary front, as well as the mean tilt and length of primary front events (9-day running mean).}
 \label{dingchan}
 \end{figure}
@@ -309,7 +283,7 @@ This work was supported by NSF funds EAR-0909195 and EAR-1211925. We also acknow
 %%% Changes in Meiyu and rainfall behavior between 1951-1979 and 1980-2007
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=36pc]{Figures/fig3_changes}
+\includegraphics[width=36pc]{Figures/changes}
 \caption{a) 15-day running mean of the change in rainfall between 1951-1979 and 1980-07, with 95\%/99\% confidence level marked by single/double cross-hatches. b) 15-day running mean of the change in Meiyu front frequency between 1951-1979 and 1980-07, with two-degree smoothing in latitude and confidence levels marked as in a). In both cases, significance is calculated by bootstrapping over a 15-day running window; for Meiyu frequency, a two-degree latitude window is also used (see Appendix for further description). Time periods are marked as in Figure 1.}
 \label{changes}
 \end{center}
@@ -318,7 +292,7 @@ This work was supported by NSF funds EAR-0909195 and EAR-1211925. We also acknow
 %%% Changes in jet mean between 1951-1979 and 1980-2007
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=36pc]{Figures/jet_seasonal_2}
+\includegraphics[width=36pc]{Figures/jet}
 \caption{a) 7-day running mean latitude of the westerly jet in the region 90-130$^\circ$E for the 1958-1979 (blue, solid) and 1980-2001 (red, dashed). Bootstrapped 95\% confidence intervals are shaded. Time periods: 2 - Pre-Meiyu; 3 - Meiyu; 4 - Post-Meiyu; b) Plot of monthly anomalies in frontal frequency versus monthly anomalies in jet latitude during days 121-150 (May) for 1958-1979 (blue) versus 1980-2001 (red), with anomalies also shown in histogram form.}
 \label{jet_seasonal}
 \end{center}
