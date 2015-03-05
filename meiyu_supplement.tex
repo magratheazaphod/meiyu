@@ -299,6 +299,9 @@ We have made the full database of Meiyu statistics from January 1 1951 to Decemb
 
 %Repeat for any additional Supporting data sets
 
+\noindent\textbf{Jet database}
+The kernel density contours shown in the main text (Figure 4) are derived from the jet counts of \citet{Schiemann2009} in the following way. First, we aggregate all the jet counts in the chosen time period (e.g. for 4b, we aggregate counts from days 121-160 for 1958-1979 and 1980-2001 separately). This results in a gridded histogram of the total number of jet counts, spanning 16.75-58.25 N and 42.5-130 E with 0.25x0.25 degree resolution. To estimate the kernel density, we use the function 'bke2d' from the R package `KernSmooth,' which produces a binned kernel density estimate using the standard bivariate normal distribution. This gives an estimate of the probability density function of jet location in a given time period. 
+
 \noindent\textbf{Movie S1.} %Type or paste caption here.
 %upload your movie(s) to AGU's journal submission site and select, "Supporting Information %(SI)" as the file type. Following naming convention: ms01.
 
