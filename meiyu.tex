@@ -113,7 +113,7 @@
 \authorrunninghead{DAY ET AL.}
 
 % Shorter version of title entered in capital letters:
-\titlerunninghead{SOUTH FLOOD-NORTH DROUGHT IN MEIYU AND JET STATS}
+\titlerunninghead{THE ``SOUTH FLOOD-NORTH DROUGHT'' IN MEIYU AND JET STATS}
 
 %Corresponding author mailing address and e-mail address:
 \authoraddr{Corresponding author: Jesse Day, University of California Berkeley, Department of Earth and Planetary Science, College of Letters and Science; 307 McCone Hall, Berkeley, CA 94720, USA. (jessed@berkeley.edu)}
@@ -167,7 +167,7 @@ We have created a novel 57-year (1951-2007) daily catalog of frontal rainbands o
 
 %% Allowed length of manuscript is (# of words/500) + # of figures + # of tables.
 
-%currently: 3509 words + 4 figures + 0 tables, so well under limit.
+%currently: 3509 words + 5 figures (max words: 3500)
 
 \begin{article}
 
@@ -191,7 +191,7 @@ We have created a novel 57-year (1951-2007) daily catalog of frontal rainbands o
 
 	\citet{Schiemann2009} constructed a data set of jet `counts' in the Tibetan Plateau region (46\textdegree E-130\textdegree E, 17\textdegree N-58\textdegree N) from ERA-40 reanalysis for 1958-2001, where a count is defined as any local maximum in the horizontal wind field with westerly magnitude greater than $30$ m s$^{-1}$; further details can be found in section 2 of \citet{Schiemann2009}. We focus on the longitude subset of $90-130^\circ$E, which encompasses the region of Meiyu front activity, and present jet latitude averaged across this longitude range in Figure \ref{jet_seasonal}. Our results are not sensitive to the exact choice of longitude range. In addition, Figure 2 presents contours of jet frequency estimated by a kernel density method, which estimates probability distribution from a set of discrete data observations. We obtain binned kernel density estimates using a standard bivariate normal kernel. 
 	
-\subsection{Meiyu Detection Algorithm}
+\subsection{Front Detection Algorithm}
 
 	For each day from 1 January 1951 to 31 December 2007 (20,819 days total), a convergent recursive image processing algorithm determines whether a frontal rainfall rainband exists inside the window of 105-123E and 20-40N. On a given day, rainfall over China must include a continuous chain of rainfall maxima over 5 degrees exceeding 10 mm day$^{-1}$. If one exists, we perform a recursive weighted linear fit and measure properties of the rainband including the latitude, mean intensity, tilt, length and width, as well as the ``quality score'' $Q$ - what percentage of daily rainfall in China falls within our calculated band. Days that do not meet a minimum $Q$ value of .6 are treated as days without fronts. We also test for the possibility of two frontal events occurring on a single day, an arrangement commonly seen in August and September. Subsequently, we use the terminology of ``primary'' and ``secondary'' front for such days. We also test for false positives dominated by heavy local rainfall over Taiwan. The full workings of the algorithm are listed in the supplementary material, along with statistics of its output and examples of its functionality.
 	

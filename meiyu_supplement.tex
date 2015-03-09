@@ -53,6 +53,9 @@
 \documentclass[draft,grl]{agutexSI}
 
 \usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{amsmath}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -182,14 +185,17 @@ Weihan Liu\altaffilmark{3}}
 %% ------------------------------------------------------------------------ %%
 
 
-
 \noindent\textbf{Contents of this file}
 %%%Remove or add items as needed%%%
 \begin{enumerate}
-\item Text S1 to Sx
+\item Text S1 to S2
+We include a more comprehensive description of several algorithms used in the text, including a description of bootstrapping methods used and of the kernel method used for plotting jet density in main text Figures 3 and 4.
+
 \item Figures S1 to Sx
-\item Tables S1 to S3
-We include three tables. Table S1 shows the climatological properties of the Meiyu Front during different time periods. Table S2 shows the changes in these statistics in 1980-2007 versus 1951-1979, with statistically significant changes indicated. Table S3 shows the same properties as Table S2, but for 1994-2007 versus 1979-1993.
+We include two figures. Figure S1 demonstrates the functionality of the Front Detection algorithm by showing different cases of its operation. Figure S2 plots a climatology of the average quality scores of accepted frontal events throughout the year.
+
+\item Tables S1 to S6
+We include six tables. Tables S1-S3 detail various aspects of the functionality of the front detection algorithm. Table S4 shows the climatological properties of the Meiyu Front during different time periods. Table S5 shows the changes in these statistics in 1980-2007 versus 1951-1979, with statistically significant changes indicated. Table S6 shows the same properties as Table S2, but for 1994-2007 versus 1979-1993.
 %if Tables are larger than 1 page, upload as separate excel file
 
 \end{enumerate}
@@ -200,53 +206,118 @@ We include three tables. Table S1 shows the climatological properties of the Mei
 \end{enumerate}
 
 \noindent\textbf{Introduction}
-In this appendix, we provide more information about the workings of the novel recursive image processing algorithm used to compile statistics on the properties of rainfall in China for 57 years. Furthermore, we include the results of the algorithm for different periods of interest, and relay the changes in frontal properties between the periods 1951-1979 and 1980-2007, which is the focus of the manuscript. We have also included a table of changes between the periods 1979-1993 and 1994-2007, which have been described in previous work and are different in nature from those described in Table S1.
+In this appendix, we provide more information about the workings of the novel recursive image processing algorithm used to compile statistics of frontal in China for 57 years. Furthermore, we include the results of the algorithm for different periods of interest, and relay the changes in frontal properties between the periods 1951-1979 and 1980-2007, which is the focus of the manuscript. We have also included a table of changes between the periods 1979-1993 and 1994-2007, which have been described in previous work and are different in nature from those described in Table S1. We also provide more information on the bootstrapping algorithms used to calculate statistical significance, as well as the kernel method used to estimate a density map of jet observations from discrete observations.
 %Type or paste your text here. The introduction gives a brief overview of the supporting information. You should include information %about as many of the following as possible (when appropriate):
 % 1. a general overview of the kind of data files;
 % 2. information about when and how the data were collected or created;
 % 3. a general description of processing steps used;
 % 4. any known imperfections or anomalies in the data.
 
-%\clearpage
+\clearpage
+
+\noindent\textbf{Meiyu database}
+We have made the full database of Meiyu statistics from January 1 1951 to December 31 2007 available at the author's personal website: \url{http://www.atmos.berkeley.edu/~jessed/mydata.html}
+
+%Repeat for any additional Supporting data sets
+
+\noindent\textbf{Jet database}
+The kernel density contours shown in the main text (Figure 4) are derived from the jet counts of \citet{Schiemann2009} in the following way. First, we aggregate all the jet counts in the chosen time period (e.g. for 4b, we aggregate counts from days 121-160 for 1958-1979 and 1980-2001 separately). This results in a gridded histogram of the total number of jet counts, spanning 16.75-58.25 N and 42.5-130 E with 0.25x0.25 degree resolution. To estimate the kernel density, we use the function 'bke2d' from the R package `KernSmooth,' which produces a binned kernel density estimate using the standard bivariate normal distribution. This gives an estimate of the probability density function of jet location in a given time period. 
+
+\clearpage
 
 %Delete all unused file types below. Copy/paste for multiples of each file type as needed.
 \noindent\textbf{Front Algorithm}
-The following text contains a full description of the recursively convergent algorithm used to find fronts in daily rainfall over China. The main text contains the end products of the algorithm and the reported products, but the full workings of the algorithm are described below.
+The following text contains a full description of the recursively convergent algorithm used to find fronts in daily rainfall over China. The overall strategy is to find a single line corresponding to the strongest rainband on a given day (a ``primary'' front), and then to search for a potential additional rainband (a ``secondary front'') by removing all rainfall associated with the primary feature. In addition, we provide figures showing different cases of algorithm functionality.
+
+\noindent\textbf{Recursive Fit}
 
 \begin{enumerate}
-	\item For a given day of accumulated rainfall over the longitudes 105E-123E and 20N-40N at .25\textdegree\ by .25\textdegree\ resolution, the first criterion is to check for a band of coherent rainfall maxima. The maximum daily rainfall at each longitude is found. If there exists a 5\textdegree continuous chain of maxima (20 points in a row) exceeding 10 mm/day, we proceed to step 2 and attempt a fit. Otherwise, there is no front on that day.
+	\item For a given day of accumulated rainfall over the longitudes 105-123^{\circ}E and 20-40^{\circ}N at $.25^{\circ}$ by $.25^{\circ}$ resolution, the first criterion is to check for a band of coherent rainfall maxima. The maximum daily rainfall at each longitude is found. If there exists a $5^{\circ}$ continuous chain of maxima (20 points in a row) exceeding 10 mm day$^{-1}$, we proceed to step 2 and attempt a fit (Figure S1a). Otherwise, no fit is attempted for that day (Figure S1b).
 	
-	\item A weighted least-squares linear fit of the \textit{latitudes} of the maxima is attempted, using the intensity of the maxima as weight: 
+	\item A weighted least-squares linear fit of the \textit{latitudes} of the maxima is attempted in MATLAB using the intensity of the maxima as weight, with the goal of finding a linear front. To encourage convergence, the weight of outlying points is set to zero, where an outlier is defined as any maximum that is over $5^{\circ}$ from the \textit{centroid} of the precipitation maxima, calculated by $\left<lat_{max}\right>=\frac{\sum_{long} lat_{max}*max}{\sum_{long} \max}$ (Figure 1c). 
 	
-	equation...
+	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again perform a weighted linear fit of the maxima. $k$ is progressively decreased with each iteration, first from $5^{\circ}$ to $2^{\circ}$ by $.25^{\circ}$ increments, and then from $2^{\circ}$ to $.125^{\circ}$ by $.125^{\circ}$ increments. The fit obtained in the final iteration is taken as our best estimate of front position.
 	
-	This equation is solved in MATLAB using the backslash operator.
+	\item We define the ``quality score'' $Q$ as the fraction of total daily precipitation inside of 105-123^{\circ}E and 20-40^{\circ}N that falls within $2.5^{\circ}$ degrees of the best estimate line. We also define intensity as mean rainfall at all points along the front axis where daily rainfall exceeds 5 mm day^{-1} (``front points''), length as the total number of front points, and width as the mean distance between half-maxima (in degrees of latitude) on either side of each front point.
 	
-	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again repeat the weighted linear fit in step 2. $k$ is progressively decreased with each iteration.
+	\item Given an estimate of primary front position, we check for a secondary front. We start by removing all precipitation associated with the primary frontal event from our daily rainfall map. To do this, all rainfall within 4^{\circ} of our primary front is set to 0, as are all other adjacent points where rainfall exceeds 10 mm day$^{-1}$ (Figure S1?). We then reapply the continuous maximum criterion from step 1. If passed, steps 2-4 are repeated to find a best estimate for the position of the secondary front, and secondary front attributes are calculated.
 	
-	\item Using our final best estimate from step 3, we define the ``quality score'' $Q$ as the fraction of total daily precipitation that falls within 5 degrees of this fit line.
-	
-	\item As mentioned, we check for a secondary front. We remove all precipitation within the primary front and again apply the front criterion in step 1 to the leftover rainfall map. If passed, steps 2-4 are repeated to find a best estimate for a secondary front.
-	
-	\item If a secondary front is found, two additional quality scores $Q_1$ and $Q_2$ are determined. $Q_1$ is defined as the fraction of rainfall contained in the primary front \textit{after removing all rainfall associated with the secondary front}. Likewise $Q_2$ is the Q score of the second front \textit{after removing all rainfall from the primary front}.		
+	\item If a secondary front is found, two additional quality scores $Q_1$ and $Q_2$ are calculated. $Q_1$ is defined as the fraction of rainfall contained in the primary front \textit{after removing all rainfall associated with the secondary front}. Likewise $Q_2$ is the Q score of the second front \textit{after removing all rainfall from the primary front}.		
 	
 \end{enumerate} 
 
-In some cases, a fit will be achieved, but its quality will be too poor to include in our statistics. To check for this scenario, we use the quality scores $Q$, $Q_1$ and $Q_2$, and the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall that falls on the island of Taiwan. If $TW > 20\%$, the day is thrown out. Such days are dominated by a local storm reaching Taiwan and rarely exhibit a strong front. Subsequently there are two ways a day may be included: 
-	
+In rare cases with two fronts of roughly equal strength but distant in latitude, the removal of outliers in step 2 prevents a fit entirely. We test for such cases by ensuring that the total sum of weights ${\sum_{long} max}$ exceeds 200 mm day$^{-1}$ (equivalent to our condition in bullet point 1). When this condition is failed, we return to step 1, but find maxima only over the latitude range 20N-$\left<lat_{max}\right>$ or $\left<lat_{max}\right>$-40N, depending on which half of our domain has a longer chain of maxima, and subsequently proceed as usual.
+
+\noindent\textbf{Quality Control}
+
+After running the algorithm for all 20,819 days from 1 January 1951 to 31 December 2007, we obtained 11,228 frontal fits and 1,116 days with two fronts. Subsequently, we apply a quality control algorithm to eliminate days with poor fits. We define the quality scores $Q$, $Q_1$ and $Q_2$, and the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall inside the window 105-$123^{\circ}$E and 20-$40^{\circ}$N that falls on the island of Taiwan. We use these metrics to define the following two criteria for inclusion:
+
 \begin{enumerate}
-	\item if $Q>.6$, the day is included in our statistics. If $Q_2$ also is greater than .6, the day will be classified as a double front day.		
+
+	\item If $TW > 20\%$, the day is thrown out (238 cases total, 2.1\% of total fits). Such days are dominated by a local storm reaching Taiwan and rarely exhibit a strong front.  
+	
+	\item Subsequently, a day can be included if it meets either of the following criteria:
+	
+	\begin{enumerate} 
+	
+	\item if $Q>.6$, the day is included in our statistics (7,522 days, 67.0\% of total fits). If $Q_2$ also is greater than .6, the day will be classified as a double front day (Type I double front; 232 cases, or 3.1\% of days where $Q>.6$).
 		
-	\item If $Q<.6$, a day can only be included if both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$. In such cases, the quality of fit is initially obscured by the presence of multiple fronts. We classify the day as a double front day.
+	\item If $Q<.6$, a day can only be included if both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$ (where again Q1 and Q2 are \textit{conditional} quality scores as defined above). In such cases, the presence of multiple fronts of similar intensity initially obscures the quality of the fit. Such days are also classified as double front days (Type II double front; 466 cases). These statistics are also collectively repeated in supplementary tables S1-S3.
+	
+	\end{enumerate}
+	
 \end{enumerate}	
-		
-	In practice, days with secondary fronts constitute a small fraction of all days ($>$ 5\%) but are more common during certain seasons (see Figure \ref{dingchan}c).
+	
+	The use of condition 2b adds 466 double front days that would otherwise have been categorized as days with no front, constituting 6.2\% of total days included in our statistics. 33.2\% of double front days are Type I and 66.8\% Type II. Double rainbands occur on 9.3\% of all days (698 out of 7,522 days), but are more common during certain seasons such as the Post-Meiyu (see Figure 1c in main text).
 
+%%% TABLE 1 - ALGORITHM FUNCTIONALITY - BIG PICTURE
+\begin{table}
+\caption{Statistics on the functionality of the Front Detection algorithm. Number in parentheses indicates the percentage of days that fall into that category out of all 20,819 days.}
+\centering
+
+\begin{tabular}{ l c c c}
+	  & Total Fits & Passes Quality Control & Percent Passing QC\\
+	 \hline
+	 Single & 11,228 (53.9\% of total) & 7,988 (38.4\% of total) & 71.1\% \\
+	 Double & 1,116 (5.4\% of total) & 698 (3.4\% of total) & 62.5\% \\
+\end{tabular}
+\end{table}
+
+%%% TABLE 2 - ALGORITHM FUNCTIONALITY - DETAILS, PRIMARY FRONT
+\begin{table}
+\caption{Details on the application of quality control criteria to primary front events.}
+\centering
+
+\begin{tabular}{ l c}
+	 Criterion & Number (\% of total) \\
+	 \hline
+	 Primary Front days before QC & 11,228 \\
+	 Taiwan days (TW$>20\%$) & 238 (2.1\%) \\
+	 $Q>.6$ (strong front) & 7,522 (67.0\%) \\
+	 Double front ($Q1>.6$ and $Q2>.6$) & 466 (4.2\%) \\
+	 Poor fit (Fails QC) & 3008 (26.8\%) \\
+	 
+\end{tabular}
+\end{table}
+
+%%% TABLE 3 - ALGORITHM FUNCTIONALITY - DETAILS, SECONDARY FRONT
+\begin{table}
+\caption{Details on the application of quality control criteria to secondary front events.}
+\centering
+
+\begin{tabular}{ l c}
+	 Criterion & Number (\% of total) \\
+	 \hline
+	 Secondary Front Days before QC & 1,116 \\
+	 Type I fit ($Q>.6$ and $Q2>.6$) & 232 (20.8\%) \\
+	 Type II fit ($Q1>.6$ and $Q2>.6$) & 466 (41.8\%) \\
+	 Poor fit (Fails QC) & 418 (37.5\%) \\
+	 
+\end{tabular}
+\end{table}
+
+%%%% TABLE 4 - MEIYU STATISTICS %%%%
 \noindent\textbf{Tables of Front Properties and Front Changes}
-
-
-
-%%%% TABLE 1 - MEIYU STATISTICS %%%%
 
 \begin{table}
 \caption{Frequency of primary and secondary fronts, as well as latitude and intensity during the Spring rains, pre-Meiyu, Meiyu season, post-Meiyu, and for the full year. These variables are calculated over the years 1951-2007, 1951-1979 and 1980-2007. Statistically significant differences between 1951-1979 and 1980-2007 at the 95\%/99\% level are indicated by bold/bold and italic, as calculated by a permutation method and a bootstrapping method described in the main text.}
@@ -264,7 +335,9 @@ In some cases, a fit will be achieved, but its quality will be too poor to inclu
 	\textbf{Post-Meiyu} (201-270) & $42.7 \pm 0.8 $ & $8.7 \pm 0.4$ & $29.6$ & 26.8 \\
 	\textbf{Whole Year} (1-365) & $38.4 \pm 0.3$ & $3.3 \pm 0.1$ & $28.3$ & 23.8 \\
 \end{tabular}
+\end{table}
 
+\begin{sidewaystable}
 \begin{tabular}{ l c c c c c c c c}
 	& \multicolumn{3}{c}{\textbf{1951-1979}} & \multicolumn{3}{c}{\textbf{1980-2007}} \\
 	\textbf{Period} & 1\% & 2\% & L & I & 1\% & 2\% & L & I \\
@@ -279,7 +352,7 @@ In some cases, a fit will be achieved, but its quality will be too poor to inclu
 \end{tabular}
 
 \label{changes_table}
-\end{table}
+\end{sidewaystable}
 
 %\begin{tabular}{ l c c c c c c}
 %	& \multicolumn{3}{c}{\textbf{1951-1979}} & \multicolumn{3}{c}{\textbf{1980-2007}} \\
@@ -294,18 +367,7 @@ In some cases, a fit will be achieved, but its quality will be too poor to inclu
 %	\textbf{Whole Year} (1-365) & $38.6 \pm 0.5 $ & $3.4 \pm 0.2 $ & $\boldsymbol{28.4 \pm .1}$ & $38.1 \pm 0.5$ & $3.3 \pm 0.2$ & $\boldsymbol{28.2 \pm 0.1} $ \\
 %\end{tabular}
 
-\noindent\textbf{Meiyu database}
-We have made the full database of Meiyu statistics from January 1 1951 to December 31 2007 available at the author's personal website: \url{http://www.atmos.berkeley.edu/~jessed/mydata.html}
 
-%Repeat for any additional Supporting data sets
-
-\noindent\textbf{Jet database}
-The kernel density contours shown in the main text (Figure 4) are derived from the jet counts of \citet{Schiemann2009} in the following way. First, we aggregate all the jet counts in the chosen time period (e.g. for 4b, we aggregate counts from days 121-160 for 1958-1979 and 1980-2001 separately). This results in a gridded histogram of the total number of jet counts, spanning 16.75-58.25 N and 42.5-130 E with 0.25x0.25 degree resolution. To estimate the kernel density, we use the function 'bke2d' from the R package `KernSmooth,' which produces a binned kernel density estimate using the standard bivariate normal distribution. This gives an estimate of the probability density function of jet location in a given time period. 
-
-\noindent\textbf{Movie S1.} %Type or paste caption here.
-%upload your movie(s) to AGU's journal submission site and select, "Supporting Information %(SI)" as the file type. Following naming convention: ms01.
-
-%Repeat any additional Supporting movies
 
 \noindent\textbf{Audio S1.} %Type or paste caption here.
 %upload your audio file(s) to AGU's journal submission site and select "Supporting Information %(SI)" as the file type. Following naming convention: auds01.
