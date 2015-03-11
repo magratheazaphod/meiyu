@@ -225,28 +225,27 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 
 \clearpage
 
-%Delete all unused file types below. Copy/paste for multiples of each file type as needed.
 \noindent\textbf{Front Algorithm}
 The following text contains a full description of the recursively convergent algorithm used to find fronts in daily rainfall over China. The overall strategy is to find a single line corresponding to the strongest rainband on a given day (a ``primary'' front), and then to search for a potential additional rainband (a ``secondary front'') by removing all rainfall associated with the primary feature. In addition, we provide figures showing different cases of algorithm functionality.
 
 \noindent\textbf{Recursive Fit}
 
 \begin{enumerate}
-	\item For a given day of accumulated rainfall over the longitudes 105-123^{\circ}E and 20-40^{\circ}N at $.25^{\circ}$ by $.25^{\circ}$ resolution, the first criterion is to check for a band of coherent rainfall maxima. The maximum daily rainfall at each longitude is found. If there exists a $5^{\circ}$ continuous chain of maxima (20 points in a row) exceeding 10 mm day$^{-1}$, we proceed to step 2 and attempt a fit (Figure S1a). Otherwise, no fit is attempted for that day (Figure S1b).
+	\item For a given day of accumulated rainfall over the longitudes 105-123$^{\circ}$E and 20-40$^{\circ}$N at $.25^{\circ}$ by $.25^{\circ}$ resolution, the first criterion is to check for a band of coherent rainfall maxima. The maximum daily rainfall at each longitude is found. If there exists a $5^{\circ}$ continuous chain of maxima (20 points in a row) exceeding 10 mm day$^{-1}$, we proceed to step 2 and attempt a fit (Figure S1a). Otherwise, no fit is attempted for that day (Figure S1b).
 	
 	\item A weighted least-squares linear fit of the \textit{latitudes} of the maxima is attempted in MATLAB using the intensity of the maxima as weight, with the goal of finding a linear front. To encourage convergence, the weight of outlying points is set to zero, where an outlier is defined as any maximum that is over $5^{\circ}$ from the \textit{centroid} of the precipitation maxima, calculated by $\left<lat_{max}\right>=\frac{\sum_{long} lat_{max}*max}{\sum_{long} \max}$ (Figure 1c). 
 	
-	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again perform a weighted linear fit of the maxima. $k$ is progressively decreased with each iteration, first from $5^{\circ}$ to $2^{\circ}$ by $.25^{\circ}$ increments, and then from $2^{\circ}$ to $.125^{\circ}$ by $.125^{\circ}$ increments. The fit obtained in the final iteration is taken as our best estimate of front position.
+	\item A recursive algorithm converges on a best estimate. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again perform a weighted linear fit of the maxima. $k$ is progressively decreased with each iteration from $5^{\circ}$ to $2^{\circ}$ by $.25^{\circ}$ increments, and then from $2^{\circ}$ to $.25^{\circ}$ by $.25^{\circ}$ increments but repeating each width $k$ twice in a row. The fit obtained in the final iteration is taken as our best estimate of front position.
 	
-	\item We define the ``quality score'' $Q$ as the fraction of total daily precipitation inside of 105-123^{\circ}E and 20-40^{\circ}N that falls within $2.5^{\circ}$ degrees of the best estimate line. We also define intensity as mean rainfall at all points along the front axis where daily rainfall exceeds 5 mm day^{-1} (``front points''), length as the total number of front points, and width as the mean distance between half-maxima (in degrees of latitude) on either side of each front point.
+	\item We define the ``quality score'' $Q$ as the fraction of total daily precipitation inside of 105-123$^{\circ}$E and 20-40$^{\circ}$N that falls within $2.5^{\circ}$ degrees of the best estimate line. We also define intensity as mean rainfall at all points along the front axis where daily rainfall exceeds 5 mm day$^{-1}$ (``front points''), length as the total number of front points, and width as the mean distance between half-maxima (in degrees of latitude) on either side of each front point.
 	
-	\item Given an estimate of primary front position, we check for a secondary front. We start by removing all precipitation associated with the primary frontal event from our daily rainfall map. To do this, all rainfall within 4^{\circ} of our primary front is set to 0, as are all other adjacent points where rainfall exceeds 10 mm day$^{-1}$ (Figure S1?). We then reapply the continuous maximum criterion from step 1. If passed, steps 2-4 are repeated to find a best estimate for the position of the secondary front, and secondary front attributes are calculated.
+	\item Given an estimate of primary front position, we check for a secondary front. We start by removing all precipitation associated with the primary frontal event from our daily rainfall map. To do this, all rainfall within 4$^{\circ}$ of our primary front is set to 0, as are all other adjacent points where rainfall exceeds 10 mm day$^{-1}$ (Figure S1?). We then reapply the continuous maximum criterion from step 1. If passed, steps 2-4 are repeated to find a best estimate for the position of the secondary front, and secondary front attributes are calculated.
 	
 	\item If a secondary front is found, two additional quality scores $Q_1$ and $Q_2$ are calculated. $Q_1$ is defined as the fraction of rainfall contained in the primary front \textit{after removing all rainfall associated with the secondary front}. Likewise $Q_2$ is the Q score of the second front \textit{after removing all rainfall from the primary front}.		
 	
 \end{enumerate} 
 
-In rare cases with two fronts of roughly equal strength but distant in latitude, the removal of outliers in step 2 prevents a fit entirely. We test for such cases by ensuring that the total sum of weights ${\sum_{long} max}$ exceeds 200 mm day$^{-1}$ (equivalent to our condition in bullet point 1). When this condition is failed, we return to step 1, but find maxima only over the latitude range 20N-$\left<lat_{max}\right>$ or $\left<lat_{max}\right>$-40N, depending on which half of our domain has a longer chain of maxima, and subsequently proceed as usual.
+In rare cases with two fronts of roughly equal strength but distant in latitude, the removal of outliers in step 2 prevents a fit entirely. We test for such cases by ensuring that the total sum of weights ${\sum_{long} max}$ exceeds 200 mm day$^{-1}$ (equivalent to our condition in bullet point 1). When this condition is failed, we return to step 1, but find maxima only over the latitude range 20N-$\left<lat_{max}\right>$ or $\left<lat_{max}\right>$-40N, depending on which half of our domain has a longer chain of maxima exceeding 10 mm day$^{-1}$, and subsequently proceed as usual.
 
 \noindent\textbf{Quality Control}
 
@@ -367,24 +366,32 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 %	\textbf{Whole Year} (1-365) & $38.6 \pm 0.5 $ & $3.4 \pm 0.2 $ & $\boldsymbol{28.4 \pm .1}$ & $38.1 \pm 0.5$ & $3.3 \pm 0.2$ & $\boldsymbol{28.2 \pm 0.1} $ \\
 %\end{tabular}
 
+\noindent\textbf{Supplementary Figures}
 
+%S1 - displaying continuous maximum criterion required to attempt front.
+\begin{figure}
+\noindent\includegraphics[width=36pc]{Figures/S1}
+\caption{The first step of the Meiyu algorithm checks to see whether a five-degree continuous band of precipitation maxima above 10 mm day$^{-1}$ exists. If so, a fit of a frontal event is attempted. a) 25 May 2007 - the continuous maximum criterion is met and a fit is attempted. b) 11 June 2007 - although there is abundant rainfall in some locations, it appears not to be frontal and the continuous maximum criterion is failed. No fit is attempted.}
+\end{figure}
 
-\noindent\textbf{Audio S1.} %Type or paste caption here.
-%upload your audio file(s) to AGU's journal submission site and select "Supporting Information %(SI)" as the file type. Following naming convention: auds01.
+%S2 - How the convergent fit algorithm works.
+\begin{figure}
+\noindent\includegraphics[width=36pc]{Figures/S2}
+\caption{Display of the functionality of the recursive convergent algorithm. On 29 April 2007, a strong maximum in southernmost China skews our initial frontal fit (panel a), but the algorithm eventually converges on the most prominent coherent band via tighter windowing (panel d).}
+\end{figure}
 
-%Repeat for any additional Supporting audio files
+%S3 - Procedure for finding double front cases.
+\begin{figure}
+\noindent\includegraphics[width=36pc]{Figures/S3}
+\caption{a) The algorithm converges on the strongest front, around 37N (defined as the ``primary front''). b) The rainfall associated with the primary front is removed, and we check for the presence of another front (a ``secondary front''), again using the continuous maximum criterion.}
+\end{figure}
 
-%%% End of body of article:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Optional Notation section goes here
-%
-% Notation -- End each entry with a period.
-% \begin{notation}
-% Term & definition.\\
-% Second term & second definition.\\
-% \end{notation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%S4 - Quality Control algorithm used to determine inclusion in statistics
+\begin{figure}
+\noindent\includegraphics[width=36pc]{Figures/S4}
+\caption{A Quality Control algorithm is used to weed out poor fits. a) 18 August 2007 - Days with a high Taiwan fraction (here, corresponding to the passage of Typhoon Sepat) are excluded from our statistics. b) June 4 2007 - A high-quality fit is achieved. c) 17 April 2007 - Although a fit is reached, it explains the distribution of daily rainfall poorly and is therefore excluded from frontal statistics. d) 21 May 2007 (same as Figure S3) - An initial fit appears to be of poor quality (Q1<.6). However, after finding a secondary front, we determine that conditional quality scores Q1 and Q2 are high, and the day is included in our statistics.}
+\end{figure}
+
 
 
 %% ------------------------------------------------------------------------ %%
