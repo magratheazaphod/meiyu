@@ -3606,6 +3606,7 @@ on the page. See documentation if you need more help.}
 % gc	GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
 %ms JAMES
 %ef EARTH'S FUTURE
+%ea EARTH AND SPACE SCIENCE
 %% default style
 % jgrga JOURNAL OF GEOPHYSICAL RESEARCH
 \newif\ifjgrga
@@ -3655,6 +3656,10 @@ on the page. See documentation if you need more help.}
 % ms EARTH'S FUTURE
 \newif\ifef
 \DeclareOption{ef}{\global\eftrue}
+
+% ms EARTH AND SPACE SCIENCE
+\newif\ifea
+\DeclareOption{ea}{\global\eatrue}
 
 \ifll \let\dooptions\ProcessOptions
 \else
@@ -4375,7 +4380,7 @@ program. If you don't see the name listed here, try dvips.^^J
 \def\jheadline{\hbox to\textwidth{\iftitle%
 \hfill\titlepageheadlinefont
 \uppercase{\journalname, Vol.~\thevolume, XXXX,
-doi:10.1029/\thepaperidnumber, \jourdate}\hfill%
+doi:10.1002/\thepaperidnumber, \jourdate}\hfill%
 \else\ifodd\c@page
 {\hfill\headlinesize\headtextfont\theauthors:\ \ \thetitle}%
 \hfill\llap{\foliofont X~-~\PutCommaIntoNumber{\the\c@page}}%
@@ -5177,6 +5182,7 @@ endpage\the\c@chapter\endcsname{\the\c@page}}}
 % gc	GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
 % ms JAMES
 % ef EARTH'S FUTURE
+% ea EARTH AND SPACE SCIENCE
 
 \def\shortyear#1#2#3#4{#3#4}
 \def\thecccline{%
@@ -5238,6 +5244,7 @@ which you can see below:^^J
 % gc	GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
 % ms JAMES
 % ef EARTH'S FUTURE
+% ea EARTH AND SPACE SCIENCE
 
 \def\NoJournalError{^^J^^J
 Please supply a journal style option:^^J
@@ -5255,7 +5262,8 @@ wrr  for WATER RESOURCES RESEARCH^^J^^J
 sw   for SPACE WEATHER^^J^^J
 gc   for GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS^^J^^J
 ms   for JAMES^^J^^J
-ef    for EARTH'S FUTURE^^J^^J}
+ef    for EARTH'S FUTURE^^J^^J
+ea    for EARTH AND SPACE SCIENCE^^J^^J}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -5309,6 +5317,33 @@ Published by American Geophysical Union^^J^^J}
 \fi
 
 \else
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\ifea %%%%%%%% EARTH AND SPACE SCIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\stylecurrversion{October 1, 2001}
+\def\journalname{\uppercase{Earth and Space Science}}
+
+\landscapecaptionwidth=35pc
+\skip\footins=30pt
+
+\typeout{^^J^^J
+JGRGA style option,
+\stylecurrversion,^^J
+\string\documentclass[jgrga]{AGUTeX}^^J
+``Earth and Space Science'', ^^J
+Published by American Geophysical Union^^J^^J}
+
+\topmargin=-32pt
+
+\ifjdraft
+\advance\textheight-.75in 
+\footskip=.25in
+\fi
+
+\else
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \ifsw %%%%%%%% Space Weather
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7135,7 +7170,7 @@ width0pt height 0pt
 
 \else%% No journal style has been specified:
 \show\NoJournalError
-\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
 
 
 %%%%%%%%%%%% 
