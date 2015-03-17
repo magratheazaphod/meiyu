@@ -55,7 +55,6 @@
 \usepackage{hyperref}
 \usepackage{rotating}
 \usepackage{amsmath}
-\usepackage{graphics}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,6 +273,8 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 
 %%% TABLE 1 - ALGORITHM FUNCTIONALITY - BIG PICTURE
 \begin{table}
+\settablenum{S1} %%Change number for each table
+
 \caption{Statistics on the functionality of the Front Detection algorithm. Number in parentheses indicates the percentage of days that fall into that category out of all 20,819 days.}
 \centering
 
@@ -287,6 +288,8 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 
 %%% TABLE 2 - ALGORITHM FUNCTIONALITY - DETAILS, PRIMARY FRONT
 \begin{table}
+\settablenum{S2} %%Change number for each table
+
 \caption{Details on the application of quality control criteria to primary front events.}
 \centering
 
@@ -304,6 +307,8 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 
 %%% TABLE 3 - ALGORITHM FUNCTIONALITY - DETAILS, SECONDARY FRONT
 \begin{table}
+\settablenum{S3} %%Change number for each table
+
 \caption{Details on the application of quality control criteria to secondary front events.}
 \centering
 
@@ -318,10 +323,14 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 \end{tabular}
 \end{table}
 
+\clearpage
+
 %%%% TABLE 4 - MEIYU STATISTICS %%%%
 \noindent\textbf{Tables of Front Properties and Front Changes}
 
 \begin{table}
+\settablenum{S4} %%Change number for each table
+
 \caption{Total number of rainbands as well as frequency of primary and secondary fronts, and the latitude and intensity of frontal rainbands during the Spring Rains, Pre-Meiyu, Meiyu season, Post-Meiyu, Fall Rains and for the full year. Statistics are compiled using both primary and secondary fronts, and are very close to results using primary fronts alone, except during the Post-Meiyu period when secondary fronts are common. Standard deviations for latitude and intensity are obtained by permutation (bootstrapping without replacement).}
 \centering
 
@@ -340,64 +349,134 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 \end{tabular}
 \end{table}
 
-\begin{table}
 
-\caption{Change in frequency of primary fronts and secondary fronts, as well as changes in latitude and in intensity, between 1951-1979 and 1980-2007. Statistically significant changes at the 95\%/99\% level are indicated by bold/bold and italic, as calculated by a permutation method, with p-value of change listed in parentheses}
+%% TABLE 5 - change in front frequency between 1951-1979 and 1980-2007
+\begin{table}
+\settablenum{S5} %%Change number for each table
 
 \centering
-\begin{tabular}{ l c c c c | c c c c}
-	& \multicolumn{4}{c}{\textbf{1951-1979}} & \multicolumn{4}{c}{\textbf{1980-2007}} \\
-	\textbf{Period} & 1\% & 2\% & L & I & 1\% & 2\% & L & I \\
-	\hline	
-	\textbf{Spring Rains} & $50.6 \pm 1.5$ & $1.0 \pm 0.3$ & $\boldsymbol{27.4 \pm .2^*}$ & $20.8 \pm .7$ & $51.2 \pm 1.5$ & $1.1 \pm 0.3$ & $\boldsymbol{27.0 \pm 0.2^*}$ & $21.4 \pm .7$ \\
-	\textbf{Pre-Meiyu} & $\boldsymbol{60.7 \pm 1.5^*}$ & $3.8 \pm 0.6$ & $27.1 \pm .2$ & $25.6 \pm .8$ & $\boldsymbol{52.2 \pm 1.6^*}$ & $3.6 \pm 0.6$ & $26.9 \pm 0.3$ & $26.0 \pm .8$\\
-	\textbf{Meiyu} &	$65.7 \pm 1.8$ & $5.8 \pm 0.9$ & $27.6 \pm .3$ & $30.2 \pm 1.0$ & $64.7 \pm 1.8$  & $6.7 \pm 0.9$ & 6$ 27.9 \pm 0.3$ & $29.8 \pm 1.0$ \\
-	\textbf{Post-Meiyu} & $63.4 \pm 2.0$ & $9.3 \pm 1.2$ & $31.1 \pm .4$ & $27.9 \pm 1.1$ & $63.0 \pm 2.0$ & $11.4 \pm 1.3$ & $30.7 \pm 0.3$ & $29.1 \pm 1.1$ \\
-	\textbf{Post-Meiyu}, $>27^\circ$N & $64.7 \pm 7.4$ & $0.7 \pm 0.7$ & $29.2 \pm .3$ & $29.2 \pm .7$ & $64.0 \pm 1.4$ & $8.8 \pm .8$ & $29.1 \pm 0.3$ & $29.5 \pm .8$\\
-	\textbf{Post-Meiyu}, $<27^\circ$N & $43.0 \pm 1.1 $ & $9.4 \pm 0.6$ & $\boldsymbol{29.9 \pm .3}$ & $26.7 \pm .8$ & $42.2 \pm 1.1$ & $8.0 \pm 0.6$ & $\boldsymbol{29.3 \pm 0.4}$ &  $26.8 \pm .8$ \\
-	\textbf{Fall Rains} & $43.0 \pm 1.1 $ & $9.4 \pm 0.6$ & $\boldsymbol{29.9 \pm .3}$ & $26.7 \pm .8$ & $42.2 \pm 1.1$ & $8.0 \pm 0.6$ & $\boldsymbol{29.3 \pm 0.4}$ &  $26.8 \pm .8$ \\
-	\textbf{Full Year} & $43.0 \pm 1.1 $ & $9.4 \pm 0.6$ & $\boldsymbol{29.9 \pm .3}$ & $26.7 \pm .8$ & $42.2 \pm 1.1$ & $8.0 \pm 0.6$ & $\boldsymbol{29.3 \pm 0.4}$ &  $26.8 \pm .8$ \\
 
-\end{tabular}%
+\caption{Change in frequency of primary fronts and secondary fronts between 1951-1979 and 1980-2007, with standard deviation of mean and p-value of change calculated analytically. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold.}
+
+\begin{tabular}{ l c c c c c c}
+	& \multicolumn{3}{c}{Primary front \%} & \multicolumn{3}{c}{Secondary front \%} \\
+	\textbf{Period} & '51-'79 & '80-'07 & $p$ & '51-'79 & '80-'07 & $p$ \\
+	\hline	
+	\textbf{Spring Rains} (60-120)		& $46.4 \pm 1.2$ & $47.7 \pm 1.2$ & $ .77 $ 	& $0.8 \pm .2$ & $0.7 \pm .2$ & $.38$ \\
+	\textbf{Pre-Meiyu} (121-160) 		& $\boldsymbol{59.0 \pm 1.4^*}$ & $\boldsymbol{53.0 \pm 1.5^*}$ & $ \boldsymbol{.0019^*} $ & $4.2 \pm .6$ & $3.8 \pm .6}$ & $.32$ \\
+	\textbf{Meiyu} (161-200)			& $66.8 \pm 1.4$ & $64.6 \pm 1.4$ & $ .14 $ 	& $7.4 \pm .8$ & $9.2 \pm .9$  & $.94$ \\
+	\textbf{Post-Meiyu} (201-273)		& $42.5 \pm 1.1$ & $42.0 \pm 1.1$ & $ .37 $	& $9.2 \pm .6$ & $7.8 \pm .6$ & $.049$ \\
+	\textbf{Post-Meiyu}, $>27^\circ$N 	& $27.8 \pm 1.0$ & $26.4 \pm 1.0$ & $ .16 $ 	& $3.8 \pm .4$ & $2.9 \pm .4$ & $.047$ \\
+	\textbf{Post-Meiyu}, $<27^\circ$N 	& $14.7 \pm 0.8 $ & $15.6 \pm 0.8$ & $ .78 $ 	& $5.4 \pm .5$ & $4.9 \pm .5$ & $.24$  \\
+	\textbf{Fall Rains} (274-320)			& $25.8 \pm 1.2 $ & $27.6 \pm 1.2$ & $ .86 $ 	& $1.0 \pm .3$ & $1.2 \pm .3$ & $.68$ \\
+	\textbf{Full Year} (1-365)			& $38.6 \pm 0.5 $ & $38.1 \pm 0.5$ & $ .25 $ 	& $3.4 \pm .2$ & $3.3 \pm .2$ & $.35$ \\
+
+\end{tabular}
 \end{table}
 
+%% TABLE 6 - change in rainband latitude and intensity between 1951-1979 and 1980-2007
+\begin{table}
+\settablenum{S6} %%Change number for each table
 
-%\begin{tabular}{ l c c c c c c}
-%	& \multicolumn{3}{c}{\textbf{1951-1979}} & \multicolumn{3}{c}{\textbf{1980-2007}} \\
-%	\textbf{Period} & 1\% & 2\% & L & 1\% & 2\% & L \\
-%	\hline	
-%	\textbf{Spring} (81-120) & $50.6 \pm 1.5$ & $1.0 \pm 0.3$ & $\boldsymbol{27.4 \pm .2^*}$ & $51.2 \pm 1.5$ & $1.1 \pm 0.3$ & $\boldsymbol{27.0 \pm 0.2^*}$ \\
-%	\textbf{Pre-Meiyu} (121-155) & $\boldsymbol{60.7 \pm 1.5^*}$ & $3.8 \pm 0.6$ & $27.1 \pm .2$ & $\boldsymbol{52.2 \pm 1.6^*}$ & $3.6 \pm 0.6$ & $26.9 \pm 0.3$ \\
-%	\textbf{Meiyu I} (156-180) &	$65.7 \pm 1.8$ & $5.8 \pm 0.9$ & $27.6 \pm .3$ & $64.7 \pm 1.8$  & $6.7 \pm 0.9$ & $ 27.9 \pm 0.3$ \\
-%	\textbf{Meiyu II} (181-200) & $63.4 \pm 2.0$ & $9.3 \pm 1.2$ & $31.1 \pm .4$ & $63.0 \pm 2.0$ & $11.4 \pm 1.3$ & $30.7 \pm 0.3$ \\
-%	\textbf{Meiyu} (156-200) & $64.7 \pm 7.4$ & $0.7 \pm 0.7$ & $29.2 \pm .3$ & $64.0 \pm 1.4$ & $8.8 \pm .8$ & $29.1 \pm 0.3$ \\
-%	\textbf{Post-Meiyu} (201-270) & $43.0 \pm 1.1 $ & $9.4 \pm 0.6$ & $\boldsymbol{29.9 \pm .3}$ & $42.2 \pm 1.1$ & $8.0 \pm 0.6$ & $\boldsymbol{29.3 \pm 0.4}$  \\
-%	\textbf{Whole Year} (1-365) & $38.6 \pm 0.5 $ & $3.4 \pm 0.2 $ & $\boldsymbol{28.4 \pm .1}$ & $38.1 \pm 0.5$ & $3.3 \pm 0.2$ & $\boldsymbol{28.2 \pm 0.1} $ \\
-%\end{tabular}
-\clearpage
+\centering
+
+\caption{Change in latitude and intensity of rainbands between 1951-1979 and 1980-2007, with standard deviation of mean and p-value of change both calculated by a permutation test with 10,000 iterations. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold.}
+
+\begin{tabular}{ l c c c c c c}
+	& \multicolumn{3}{c}{Front latitude ($^\circ$)} & \multicolumn{3}{c}{Intensity (mm day$^{-1})$} \\
+	\textbf{Period} & '51-'79 & '80-'07 & $p$ & '51-'79 & '80-'07 & $p$ \\
+	\hline	
+	\textbf{Spring Rains} (60-120)		& $\boldsymbol{27.6 \pm .2}$ & $\boldsymbol{27.3 \pm .2}$ & $ \boldsymbol{.020} $ 		& $\boldsymbol{19.7 \pm .5}$ 	& $\boldsymbol{20.5 \pm .5} $ & $\boldsymbol{.984}$ \\
+	\textbf{Pre-Meiyu} (121-160) 		& $27.5 \pm .3$ & $27.4 \pm .3$ & $ .29 $ 		& $25.4 \pm .7$ 	& $25.6 \pm .8	$ & $.72$ \\
+	\textbf{Meiyu} (161-200)			& $29.6 \pm .3$ & $29.4 \pm .3$ & $ .24 $ 		& $28.2 \pm .8$ 	& $28.4 \pm .8	$  & $.71$ \\
+	\textbf{Post-Meiyu} (201-273)		& $\boldsymbol{30.2 \pm .3^*}$ & $\boldsymbol{29.6 \pm .3^*}$ & $\boldsymbol{.0048^*} $	& $25.5 \pm .7$ 	& $25.7 \pm .7	$ & $.71$ \\
+	\textbf{Post-Meiyu}, $>27^\circ$N 	& $\boldsymbol{33.6 \pm .2^*}$ & $\boldsymbol{32.9 \pm .3^*}$ & $\boldsymbol{.0003^*} $ 	& $23.5 \pm .7$ 	& $24.2 \pm .7	$ & $.92$ \\
+	\textbf{Post-Meiyu}, $<27^\circ$N 	& $23.7 \pm .1 $ & $23.8 \pm .2$ & $ .83 $ 	& $29.1 \pm 1.3$ 	& $28.3 \pm 1.4	$ & $.20$  \\
+	\textbf{Fall Rains} (274-320)			& $29.1 \pm .4 $ & $29.3 \pm .4$ & $ .79 $ 	& $20.3 \pm 1.0$ 	& $20.8 \pm .9	$ & $.76$ \\
+	\textbf{Full Year} (1-365)			& $\boldsymbol{28.7 \pm .1 $^*} & $\boldsymbol{28.5 \pm .1 ^*}$ & $ \boldsymbol{.0032^*} $ 	& $23.3 \pm .3$ 	& $23.6 \pm .3	$ & $.95$ \\
+
+\end{tabular}
+\end{table}
+
+%% TABLE 7 - change in front frequency between 1979-1993 and 1994-2007
+\begin{table}
+\settablenum{S7} %%Change number for each table
+
+\centering
+
+\caption{Change in frequency of primary fronts and secondary fronts between 1979-1993 and 1994-2007, with standard deviation of mean and p-value of change calculated analytically. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold.}
+
+\begin{tabular}{ l c c c c c c}
+	& \multicolumn{3}{c}{Primary front \%} & \multicolumn{3}{c}{Secondary front \%} \\
+	\textbf{Period} & '79-'93 & '94-'07 & $p$ & '79-'93 & '94-'07 & $p$ \\
+	\hline	
+	\textbf{Spring Rains} (60-120)		& $50.0 \pm 1.7$ & $45.4 \pm 1.7$ & $ .029 $ 	& $0.9 \pm .3$ 	& $0.5 \pm .2$ & $.15$ \\
+	\textbf{Pre-Meiyu} (121-160) 		& $53.0 \pm 2.0$ & $53.2 \pm 2.1$ & $ .53$ 	& $3.5 \pm .8$ 	& $4.1 \pm .8}$ & $.71$ \\
+	\textbf{Meiyu} (161-200)			& $63.7 \pm 2.0$ & $64.8 \pm 2.0$ & $ .66 $ 	& $8.7 \pm 1.1$ 	& $9.5 \pm 1.2$  & $.68$ \\
+	\textbf{Post-Meiyu} (201-273)		& $41.6 \pm 1.5$ & $42.7 \pm 1.5$ & $ .68 $	& $8.0 \pm .8$ 	& $8.0 \pm .8$ & $.50$ \\
+	\textbf{Post-Meiyu}, $>27^\circ$N 	& $27.2 \pm 1.3$ & $25.2 \pm 1.4$ & $ .15 $ 	& $3.1 \pm .5$ 	& $2.9 \pm .5$ & $.41$ \\
+	\textbf{Post-Meiyu}, $<27^\circ$N 	& $14.4 \pm 1.1 $ & $17.4 \pm 1.2$ & $ .97 $ 	& $4.9 \pm .7$ 	& $5.1 \pm .7$ & $.57$  \\
+	\textbf{Fall Rains} (274-320)			& $26.4 \pm 1.7 $ & $27.0 \pm 1.7$ & $ .61 $ 	& $1.6 \pm .5$ 	& $0.8 \pm .3$ & $.082$ \\
+	\textbf{Full Year} (1-365)			& $37.9 \pm 0.7 $ & $38.2 \pm 0.7$ & $ .62 $ 	& $3.3 \pm .2$ 	& $3.3 \pm .3$ & $.52$ \\
+
+\end{tabular}
+\end{table}
+
+%% TABLE 8 - change in rainband latitude and intensity between 1979-1993 and 1994-2007
+\begin{table}
+\settablenum{S8} %%Change number for each table
+
+\centering
+
+\caption{Change in latitude and intensity of rainbands between 1979-1993 and 1994-2007, with standard deviation of mean and p-value of change both calculated by a permutation test with 10,000 iterations. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold.}
+
+\begin{tabular}{ l c c c c c c}
+	& \multicolumn{3}{c}{Front latitude ($^\circ$)} & \multicolumn{3}{c}{Intensity (mm day$^{-1})$} \\
+	\textbf{Period} & '79-'93 & '94-'07 & $p$ & '79-'93 & '94-'07 & $p$ \\
+	\hline	
+	\textbf{Spring Rains} (60-120)		& $27.2 \pm .3 $ & $27.5 \pm .3 $ & $ .967 $ 	& $20.5 \pm .7$ 	& $20.6 \pm .8 	$ & $.54}$ \\
+	\textbf{Pre-Meiyu} (121-160) 		& $27.4 \pm .4 $ & $27.2 \pm .4$ & $ .23 $ 	& $25.0 \pm 1.0$ 	& $26.2 \pm 1.1	$ & $.94$ \\
+	\textbf{Meiyu} (161-200)			& $\boldsymbol{30.0 \pm .4^*}$ & $\boldsymbol{28.9 \pm .4^*}$ & $\boldsymbol{.0002^*}$ & $\boldsymbol{27.3 \pm 1.1^*}$ 	& $\boldsymbol{29.8 \pm 1.1^*}$  & $\boldsymbol{.9994 ^*}$ \\
+	\textbf{Post-Meiyu} (201-273)		& $29.8 \pm .4 $ & $29.3 \pm .5 $ & $ .092 $	& $25.9 \pm .9$ 	& $25.4 \pm .9	$ & $.28$ \\
+	\textbf{Post-Meiyu}, $>27^\circ$N 	& $32.8 \pm .3 $ & $33.0 \pm .4 $ & $ .80 $ 	& $24.4 \pm 1.0$ 	& $23.9 \pm 1.1	$ & $.24$ \\
+	\textbf{Post-Meiyu}, $<27^\circ$N 	& $23.8 \pm .2 $ & $23.8 \pm .2 $ & $ .48 $ 	& $28.7 \pm 1.8$ 	& $27.9 \pm 1.7	$ & $.28$  \\
+	\textbf{Fall Rains} (274-320)			& $\boldsymbol{28.9 \pm .5} $ & $\boldsymbol{29.7 \pm .6} $ & $ \boldsymbol{.982} $ 	& $20.1 \pm 1.4$ 	& $21.7 \pm 1.4	$ & $.94$ \\
+	\textbf{Full Year} (1-365)			& $28.6 \pm .2 $ & $28.4 \pm .2 $ & $ .13 $ 	& $\boldsymbol{23.3 \pm .4}$ 	& $\boldsymbol{24.0 \pm .4}	$ & $\boldsymbol{.982}$ \\
+
+\end{tabular}
+\end{table}
+
 
 \noindent\textbf{Supplementary Figures}
 
 %S1 - displaying continuous maximum criterion required to attempt front.
 \begin{figure}
+\setfigurenum{S1} %%Change number for each figure
+
 \noindent\includegraphics[width=36pc]{Figures/S1}
 \caption{The first step of the Meiyu algorithm checks to see whether a five-degree continuous band of precipitation maxima above 10 mm day$^{-1}$ exists. If so, a fit of a frontal event is attempted. a) 25 May 2007 - the continuous maximum criterion is met and a fit is attempted. b) 11 June 2007 - although there is abundant rainfall in some locations, it appears not to be frontal and the continuous maximum criterion is failed. No fit is attempted.}
 \end{figure}
 
 %S2 - How the convergent fit algorithm works.
 \begin{figure}
+\setfigurenum{S2} %%Change number for each figure
+
 \noindent\includegraphics[width=36pc]{Figures/S2}
 \caption{Display of the functionality of the recursive convergent algorithm. On 29 April 2007, a strong maximum in southernmost China skews our initial frontal fit (panel a), but the algorithm eventually converges on the most prominent coherent band via tighter windowing (panel d).}
 \end{figure}
 
 %S3 - Procedure for finding double front cases.
 \begin{figure}
+\setfigurenum{S3} %%Change number for each figure
+
 \noindent\includegraphics[width=36pc]{Figures/S3}
 \caption{a) The algorithm converges on the strongest front, around 37N (defined as the ``primary front''). b) The rainfall associated with the primary front is removed, and we check for the presence of another front (a ``secondary front''), again using the continuous maximum criterion.}
 \end{figure}
 
 %S4 - Quality Control algorithm used to determine inclusion in statistics
 \begin{figure}
+\setfigurenum{S4} %%Change number for each figure
+
 \noindent\includegraphics[width=36pc]{Figures/S4}
 \caption{A Quality Control algorithm is used to weed out poor fits. a) 18 August 2007 - Days with a high Taiwan fraction (here, corresponding to the passage of Typhoon Sepat) are excluded from our statistics. b) June 4 2007 - A high-quality fit is achieved. c) 17 April 2007 - Although a fit is reached, it explains the distribution of daily rainfall poorly and is therefore excluded from frontal statistics. d) 21 May 2007 (same as Figure S3) - An initial fit appears to be of poor quality (Q1<.6). However, after finding a secondary front, we determine that conditional quality scores Q1 and Q2 are high, and the day is included in our statistics.}
 \end{figure}
