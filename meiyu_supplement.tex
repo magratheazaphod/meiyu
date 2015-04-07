@@ -274,15 +274,15 @@ After running the algorithm for all 20,819 days from 1 January 1951 to 31 Decemb
 
 \vspace{2mm}
 
-Rainfall and front statistics are temporally autocorrelated on a daily timescale, reducing the effective number of degrees of freedom. Magnitude of autocorrelation also varies with latitude and season. In calculating the significance of rainband frequency changes, we use estimated degrees of freedom $n=\rfrac{N}{\tau}$, with N the total number of days and decorrelation time \tau (units of days) given by
+Rainfall and front statistics are temporally autocorrelated on a daily timescale, reducing the effective number of degrees of freedom. Magnitude of autocorrelation also varies with latitude and season. In calculating the significance of rainband frequency changes, we use estimated degrees of freedom $n=\frac{N}{\tau}$, with N total number of days and decorrelation time $\tau$ of the mean given by
 
 \begin{equation*}
 \tau=1+2\sum_{k=1}^m \rho(k)
 \end{equation*}
 
-where $\rho(k)$ is the auto-correlation function of rainband presence with lag $k$ \citep{Livezey,von Storch}. We calculate all values of $\tau$ with m=10 days. The yearly mean decorrelation timescale of rainband frequency is found to be $\tau = 1.81$ after removing the seasonal cycle. This value is used to calculate significance in Figure 3b. The standard deviation and $p$-values of rainband frequency changes in Tables S5 and S7 use seasonal values of $\tau$ as listed.
+where $\rho(k)$ is the autocorrelation function of rainband presence with lag $k$ \citep{VonStorch1999}. We calculate $\tau$ using m=10 days. The yearly mean decorrelation timescale of rainband frequency is found to be $\tau = 1.81$ after removing the seasonal cycle. This value is used to calculate significance of changes in Figure 3b. The standard deviation and $p$-values of rainband frequency changes in Tables S5 and S7 use seasonal values of $\tau$ as listed.
 
-The autocorrelation of daily rainfall in China is $\tau =2-4 \mathrm{days}$ and generally less than 3 days. The calculation of significance of rainfall changes in Figure 3a uses a moving blocks bootstrap appropriate for autocorrelated data, with block length of 2 \citep{Singh2014}. However, for the significance of rainband latitude and intensity changes (Tables S6 and S8), we use a permutation test because the time series of front properties are not continuous (many days do not have fronts), precluding the use of a moving blocks bootstrap.
+The autocorrelation of daily rainfall in China is $\tau =2-4 \mathrm{days}$ and generally less than 3 days. The calculation of significance of rainfall changes in Figure 3a uses a moving blocks bootstrap appropriate for autocorrelated data with 1000 iterations and block length of 3 days \citep{Singh2014}. The choice of different block lengths does not strongly alter estimations of significance. For the significance of rainband latitude and intensity changes (Tables S6 and S8), we use a permutation test because the time series of front properties are not continuous (many days do not have fronts), precluding the use of a moving blocks bootstrap.
 
 \vspace{5mm}
 
@@ -529,8 +529,7 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 \caption{Autocorrelation of the jet during the Pre-Meiyu season (days 121-160) for a) daily and b) 4-day blocks; and during the Post-Meiyu season (days 201-273) for c) daily and d) 7-day blocks. Block length is longer during Post-Meiyu due to longer autocorrelation time scale of mean jet latitude. The compiling of daily mean jet data into longer blocks removes temporal autocorrelation, allowing for the use of the bootstrap Kolmogorov-Smirnov test to compare changes in mean latitude between two time periods.}
 \end{figure}
 
-
-\begin{thebibliography}{2}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -542,6 +541,17 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 Schiemann, R., D.~L\"{u}thi, and C.~Sch\"{a}r (2009), {Seasonality and
   Interannual Variability of the Westerly Jet in the Tibetan Plateau Region},
   \textit{J. Clim.}, \textit{22}, 2940--2957, \doi{10.1175/2008JCLI2625.1}.
+
+\bibitem[{\textit{Singh et~al.}(2014)\textit{Singh, Tsiang, Rajaratnam, and
+  Diffenbaugh}}]{Singh2014}
+Singh, D., M.~Tsiang, B.~Rajaratnam, and N.~S. Diffenbaugh (2014), {Observed
+  changes in extreme wet and dry spells during the South Asian summer monsoon
+  season}, \textit{Nat. Clim. Chang.}, \textit{4}, 456--461,
+  \doi{10.1038/NCLIMATE2208}.
+
+\bibitem[{\textit{von Storch and Zwiers}(1999)}]{VonStorch1999}
+von Storch, H., and F.~W. Zwiers (1999), \textit{{Statistical Analysis in
+  Climate Research}}, 371--374 pp., Cambridge University Press, Cambridge, UK.
 
 \bibitem[{\textit{Yatagai et~al.}(2012)\textit{Yatagai, Kamiguchi, Arakawa,
   Hamada, Yasutomi, and Kitoh}}]{Yatagai2012}
