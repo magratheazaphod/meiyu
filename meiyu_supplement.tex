@@ -50,7 +50,7 @@
 % (If you are submitting to a journal other than jgrga,
 % substitute the initials of the journal for "jgrga" below.)
 
-\documentclass[final,grl]{agutexSI}
+\documentclass[draft,grl]{agutexSI}
 \usepackage{hyperref}
 \usepackage{rotating}
 \usepackage{amsmath}
@@ -299,6 +299,38 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 %\bibliographystyle{agufull08}
 %\bibliography{meiyu_supp}
 
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{\textit{Schiemann et~al.}(2009)\textit{Schiemann, L\"{u}thi, and
+  Sch\"{a}r}}]{Schiemann2009}
+Schiemann, R., D.~L\"{u}thi, and C.~Sch\"{a}r (2009), {Seasonality and
+  Interannual Variability of the Westerly Jet in the Tibetan Plateau Region},
+  \textit{J. Clim.}, \textit{22}, 2940--2957, \doi{10.1175/2008JCLI2625.1}.
+
+\bibitem[{\textit{Singh et~al.}(2014)\textit{Singh, Tsiang, Rajaratnam, and
+  Diffenbaugh}}]{Singh2014}
+Singh, D., M.~Tsiang, B.~Rajaratnam, and N.~S. Diffenbaugh (2014), {Observed
+  changes in extreme wet and dry spells during the South Asian summer monsoon
+  season}, \textit{Nat. Clim. Chang.}, \textit{4}, 456--461,
+  \doi{10.1038/NCLIMATE2208}.
+
+\bibitem[{\textit{von Storch and Zwiers}(1999)}]{VonStorch1999}
+von Storch, H., and F.~W. Zwiers (1999), \textit{{Statistical Analysis in
+  Climate Research}}, 371--374 pp., Cambridge University Press, Cambridge, UK.
+
+\bibitem[{\textit{Yatagai et~al.}(2012)\textit{Yatagai, Kamiguchi, Arakawa,
+  Hamada, Yasutomi, and Kitoh}}]{Yatagai2012}
+Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
+  (2012), {APHRODITE: Constructing a Long-Term Daily Gridded Precipitation
+  Dataset for Asia Based on a Dense Network of Rain Gauges}, \textit{Bull. Am.
+  Meteorol. Soc.}, \textit{93}, 1401--1415, \doi{10.1175/BAMS-D-11-00122.1}.
+
+\end{thebibliography}
 
 \end{article}
 
@@ -492,7 +524,7 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 \begin{figure}
 \setfigurenum{S1}  
 
-\noindent\includegraphics[width=36pc]{Figures/S1}
+\noindent\includegraphics[width=36pc]{S1}
 \caption{The first step of the rainband detection algorithm checks to see whether a five-degree continuous longitudinal band of precipitation maxima above 10 mm day$^{-1}$ exists. If so, a rainband fit is attempted. a) 25 May 2007 - the continuous maximum criterion is met and a fit is attempted. b) 11 June 2007 - although there is abundant rainfall in some locations, it appears not to be frontal and the continuous maximum criterion is failed. No fit is attempted.}
 \end{figure}
 
@@ -500,7 +532,7 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 \begin{figure}
 \setfigurenum{S2}  
 
-\noindent\includegraphics[width=36pc]{Figures/S2}
+\noindent\includegraphics[width=36pc]{S2}
 \caption{Display of the functionality of the recursive convergent algorithm. On 29 April 2007, a strong maximum in southernmost China skews our initial rainband fit (a), but the algorithm eventually converges on the most prominent coherent band via tighter windowing (d).}
 \end{figure}
 
@@ -508,7 +540,7 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 \begin{figure}
 \setfigurenum{S3}  
 
-\noindent\includegraphics[width=36pc]{Figures/S3}
+\noindent\includegraphics[width=36pc]{S3}
 \caption{a) The algorithm converges on the strongest rainband, around 37N (defined as the ``primary rainband''). b) The rainfall associated with the primary rainband is removed, and we check for the presence of another rainband (a ``secondary rainband''), again using the continuous maximum criterion.}
 \end{figure}
 
@@ -516,7 +548,7 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 \begin{figure}
 \setfigurenum{S4}  
 
-\noindent\includegraphics[width=36pc]{Figures/S4}
+\noindent\includegraphics[width=36pc]{S4}
 \caption{A quality control algorithm is used to exclude poor fits. a) 18 August 2007 - Days with a high Taiwan fraction (here, corresponding to the passage of Typhoon Sepat) are excluded from our statistics. b) June 4 2007 - A high-quality fit is achieved. c) 17 April 2007 - Although a fit is reached, it explains the distribution of daily rainfall poorly and is therefore excluded from rainband statistics. d) 21 May 2007 (same day as Figure S3) - An initial fit appears to be of poor quality ($Q<.6$). However, after finding a secondary rainband, we determine that conditional quality scores $Q_1$ and $Q_2$ are high, and the day is included in our statistics.}
 \end{figure}
 
@@ -525,41 +557,8 @@ The kernel density contours shown in the main text (Figure 4) are derived from t
 \setfigurenum{S5}  
 \centering
 
-\noindent\includegraphics[width=24pc]{Figures/S5}
+\noindent\includegraphics[width=24pc]{S5}
 \caption{Autocorrelation of the jet during the Pre-Meiyu season (days 121-160) for a) daily and b) 4-day blocks; and during the Post-Meiyu season (days 201-273) for c) daily and d) 7-day blocks. Block length is longer during Post-Meiyu due to longer autocorrelation time scale of mean jet latitude. The compiling of daily mean jet data into longer blocks removes temporal autocorrelation, allowing for the use of the bootstrap Kolmogorov-Smirnov test to compare changes in mean latitude between two time periods.}
 \end{figure}
-
-\begin{thebibliography}{4}
-\providecommand{\natexlab}[1]{#1}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-
-\bibitem[{\textit{Schiemann et~al.}(2009)\textit{Schiemann, L\"{u}thi, and
-  Sch\"{a}r}}]{Schiemann2009}
-Schiemann, R., D.~L\"{u}thi, and C.~Sch\"{a}r (2009), {Seasonality and
-  Interannual Variability of the Westerly Jet in the Tibetan Plateau Region},
-  \textit{J. Clim.}, \textit{22}, 2940--2957, \doi{10.1175/2008JCLI2625.1}.
-
-\bibitem[{\textit{Singh et~al.}(2014)\textit{Singh, Tsiang, Rajaratnam, and
-  Diffenbaugh}}]{Singh2014}
-Singh, D., M.~Tsiang, B.~Rajaratnam, and N.~S. Diffenbaugh (2014), {Observed
-  changes in extreme wet and dry spells during the South Asian summer monsoon
-  season}, \textit{Nat. Clim. Chang.}, \textit{4}, 456--461,
-  \doi{10.1038/NCLIMATE2208}.
-
-\bibitem[{\textit{von Storch and Zwiers}(1999)}]{VonStorch1999}
-von Storch, H., and F.~W. Zwiers (1999), \textit{{Statistical Analysis in
-  Climate Research}}, 371--374 pp., Cambridge University Press, Cambridge, UK.
-
-\bibitem[{\textit{Yatagai et~al.}(2012)\textit{Yatagai, Kamiguchi, Arakawa,
-  Hamada, Yasutomi, and Kitoh}}]{Yatagai2012}
-Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
-  (2012), {APHRODITE: Constructing a Long-Term Daily Gridded Precipitation
-  Dataset for Asia Based on a Dense Network of Rain Gauges}, \textit{Bull. Am.
-  Meteorol. Soc.}, \textit{93}, 1401--1415, \doi{10.1175/BAMS-D-11-00122.1}.
-
-\end{thebibliography}
 
 \end{document}
