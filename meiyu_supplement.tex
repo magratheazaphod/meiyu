@@ -215,62 +215,7 @@ Weihan Liu\altaffilmark{3}}
 
 \vspace{5mm}
 
-\noindent\textbf{{\Large S2 Rainband Detection Algorithm}}
-\vspace{2mm}
-
-\noindent\textbf{S2.1 Objective}
-
-The overall strategy is to find a single line corresponding to the strongest rainband on a given day (a ``primary rainband'') from daily snapshots of rainfall over China taken from APHRODITE (Asian Precipitation - Highly-Resolved Observational Data Integration Towards Evaluation of the Water Resources) rain gauge data \citep{Yatagai2012}. If a sufficiently strong rainband exists, we use a recursive convergent image processing algorithm to find the band's position. After a successful fit, we also check for the presence of a second rainband (a ``secondary rainband'') by removing all rainfall associated with the primary feature and repeating the same algorithm. Subsequently, we calculate a ``quality score" which evaluates whether the obtained fit was adequate. If the fit is sufficiently good, its properties are added to a database of rainband statistics; if not, the day is discarded.
-\vspace{3mm}
-
-\noindent\textbf{S2.2 Recursive Fit and Rainband Properties}
-
-\begin{enumerate}
-	\item Given a map of daily accumulated rainfall over the longitudes 105-123$^{\circ}$E and 20-40$^{\circ}$N at $.25^{\circ}$ by $.25^{\circ}$ resolution, the daily rainfall maximum at each longitude is found, and its intensity and latitude recorded. If there exists a $5^{\circ}$ continuous chain of maxima (20 points in a row) exceeding 10 mm day$^{-1}$, we proceed to step 2 and attempt a fit (Figure S1a). Otherwise, no fit is attempted for that day (Figure S1b).
-	
-	\item In order to approximate the position of the rainband with a best fit line, a weighted least-squares linear fit of the \textit{latitudes} of the maxima is performed in MATLAB using the intensity of each maximum as weight. To encourage convergence, the weight of outlying points is set to zero, where an outlier is defined as any maximum that is over $5^{\circ}$ from the centroid of the precipitation maxima $\left<lat_{max}\right>$, calculated by $\left<lat_{max}\right>=\frac{\sum_{long} lat_{max}*max}{\sum_{long} \max}$.
-	
-	\item A recursive algorithm converges on a best estimate of rainband position. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again perform a weighted linear fit of the maxima (Figure S2a). $k$ is progressively decreased with each iteration from $5^{\circ}$ to $2^{\circ}$ by $.25^{\circ}$ increments, and then from $2^{\circ}$ to $.25^{\circ}$ by $.25^{\circ}$ increments but repeating each width $k$ twice in a row (Figures S2b-c). The fit obtained in the final iteration is taken as our best estimate (Figure S2d).
-	
-	\item We define the ``quality score'' $Q$ as the fraction of total daily precipitation inside of  that falls within $2.5^{\circ}$ degrees of the best estimate line (Figure 4b). Other rainband properties are calculated as follows. Rainband latitude is defined as the latitude of our fitted band at the reference longitude of 115$^{\circ}$E. Intensity is defined as mean rainfall at all points along the band axis where daily rainfall exceeds 5 mm day$^{-1}$ (``rainband points''), length as the total number of rainband points (expressed in units of degrees of longitude), and width as the mean distance between half-maxima on either side of each rainband point (units of degrees of latitude).
-	
-	\item Given an estimate of primary rainband, we check for a secondary rainband. We start by removing all precipitation associated with the primary rainband from our daily rainfall map. To do this, all rainfall within 4$^{\circ}$ of our primary rainband is set to 0, as well as rainfall at any other adjacent points where rainfall exceeds 10 mm day$^{-1}$ (Figure S3a). We then reapply the continuous maximum criterion from step 1 (Figure S3b). If passed, steps 2-4 are repeated to find a best estimate for the position of the secondary rainband, and its attributes calculated.
-	
-	\item If a secondary rainband is found, two additional quality scores $Q_1$ and $Q_2$ are calculated. $Q_1$ is defined as the fraction of daily rainfall inside of 105-123$^{\circ}$E and 20-40$^{\circ}$N that is contained within $2.5^{\circ}$ degrees of the primary rainband \textit{after removing all rainfall associated with the secondary rainband} (equivalently, the $Q$ score after removing the secondary rainband). Likewise, $Q_2$ is the $Q$ score of the second rainband \textit{after removing all rainfall from the primary rainband} (Figure S4d).		
-	
-\end{enumerate} 
-
-In rare cases with two rainbands of roughly equal strength but well-separated in latitude, the removal of outliers in step 2 prevents a fit entirely. We test for such cases by ensuring that the total sum of weights ${\sum_{long} max}$ exceeds 200 mm day$^{-1}$, equivalent to our condition in bullet point 1. When this condition is failed, which can only occur when too many of our maxima have been discarded, we return to step 1, but find maxima only over the latitude range 20N-$\left<lat_{max}\right>$ or $\left<lat_{max}\right>$-40N, depending on which half of our domain has a longer chain of maxima exceeding 10 mm day$^{-1}$, and apply the remaining steps of our algorithm as usual.
-
-\vspace{3mm}
-
-\noindent\textbf{S2.3 Quality Control}
-
-After running the algorithm for all 20,819 days from 1 January 1951 to 31 December 2007, we obtained 11,228 days with at least one rainband and 1,116 days with two rainbands. Subsequently, we apply a quality control (QC) algorithm to eliminate days with poor fit, based on the quality scores $Q$, $Q_1$ and $Q_2$ as well as the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall inside the window 105-$123^{\circ}$E and 20-$40^{\circ}$N that falls over the island of Taiwan (roughly 120-$122^{\circ}$E and 22-$26^{\circ}$N. We use these metrics to define the following two criteria for inclusion:
-
-\begin{enumerate}
-
-	\item If $TW > 20\%$, the day's fit is thrown out (238 cases total, 2.1\% of total fits). Such days are dominated by a local storm reaching Taiwan and do not exhibit a strong rainband (Figure 4a).  
-	
-	\item Subsequently, a day can be included if it meets either of the following criteria:
-	
-	\begin{enumerate} 
-	
-	\item if $Q>.6$, the day is included in our statistics (7,522 days, 67.0\% of total fits; Figure 4b). If $Q_2$ is also greater than .6, the day will be classified as a double rainband day (Type I double rainband; 232 cases, or 3.1\% of days where $Q>.6$ and $Q_2>.6$).
-		
-	\item If $Q<.6$, the day is discarded unless two fronts are detected and both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$ (where again $Q_1$ and $Q_2$ are \textit{conditional} quality scores as defined above). In such cases, the presence of multiple rainbands of similar intensity initially obscures the quality of the fit (Figure 4d). Such days are also classified as double rainband days (Type II double rainband; 466 cases). In the absence of such a double rainband configuration the day is thrown out (Figure 4c).
-	
-	\end{enumerate}
-	
-\end{enumerate}	
-
-\vspace{1mm}
-
-	The use of conditional quality scores $Q_1$ and $Q_2$ adds 466 double rainband days that would otherwise have been categorized as days with no rainband, constituting 6.2\% of total days included in our statistics. 33.2\% of double rainband days are Type I ($Q>.6$) and 66.8\% Type II ($Q<.6$). Double rainbands are more common during certain seasons such as the Post-Meiyu (see Figure 1c in main text). Tables S1-S3 contain more information on algorithm functionality.
-	
-\vspace{5mm}
-
-\noindent\textbf{{\Large S3 Temporal Autocorrelation}}
+\noindent\textbf{{\Large S2 Temporal Autocorrelation}}
 
 \vspace{2mm}
 
@@ -285,12 +230,6 @@ where $\rho(k)$ is the autocorrelation function of rainband presence with lag $k
 The autocorrelation of daily rainfall in China is $\tau =2-4 \mathrm{days}$ and generally less than 3 days. The calculation of significance of rainfall changes in Figure 3a uses a moving blocks bootstrap appropriate for autocorrelated data with 1000 iterations and block length of 3 days \citep{Singh2014}. The choice of different block lengths does not strongly alter estimations of significance. For the significance of rainband latitude and intensity changes (Tables S6 and S8), we use a permutation test because the time series of front properties are not continuous (many days do not have fronts), precluding the use of a moving blocks bootstrap.
 
 \vspace{5mm}
-
-\noindent\textbf{{\Large S4 Jet Database and Kernel Density}}
-
-\vspace{2mm}
-
-The kernel density contours shown in the main text (Figure 4) are derived from the jet counts of \citet{Schiemann2009} in the following way. First, we aggregate all the jet counts in the chosen time period (e.g. for figure 4b, we aggregate counts from days 121-160 for 1958-1979 and 1980-2001 separately). This results in a gridded histogram of the total number of jet counts, spanning 16.75-58.25$^{\circ}$N and 42.5-130$^{\circ}$E with $0.25^{\circ} \times 0.25^{\circ}$ resolution. To estimate the kernel density, we use the function 'bke2d' from the R package `KernSmooth,' which produces a binned kernel density estimate using the standard bivariate normal distribution. This gives an estimate of the probability density function of jet location in a given time period. 
 
 %%% END ARTICLE %%%
 
@@ -552,13 +491,5 @@ Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
 \caption{A quality control algorithm is used to exclude poor fits. a) 18 August 2007 - Days with a high Taiwan fraction (here, corresponding to the passage of Typhoon Sepat) are excluded from our statistics. b) June 4 2007 - A high-quality fit is achieved. c) 17 April 2007 - Although a fit is reached, it explains the distribution of daily rainfall poorly and is therefore excluded from rainband statistics. d) 21 May 2007 (same day as Figure S3) - An initial fit appears to be of poor quality ($Q<.6$). However, after finding a secondary rainband, we determine that conditional quality scores $Q_1$ and $Q_2$ are high, and the day is included in our statistics.}
 \end{figure}
 
-%S5 - Autocorrelation of jet during Pre-Meiyu and Post-Meiyu
-\begin{figure}
-\setfigurenum{S5}  
-\centering
-
-\noindent\includegraphics[width=24pc]{S5}
-\caption{Autocorrelation of the jet during the Pre-Meiyu season (days 121-160) for a) daily and b) 4-day blocks; and during the Post-Meiyu season (days 201-273) for c) daily and d) 7-day blocks. Block length is longer during Post-Meiyu due to longer autocorrelation time scale of mean jet latitude. The compiling of daily mean jet data into longer blocks removes temporal autocorrelation, allowing for the use of the bootstrap Kolmogorov-Smirnov test to compare changes in mean latitude between two time periods.}
-\end{figure}
 
 \end{document}
